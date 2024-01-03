@@ -5,7 +5,7 @@
 #include "../../headers/GraphicLib/Techniques/PickTechnique.hpp"
 
 namespace GraphicLib::Techniques {
-    void PickTechnique::setId(const std::string &name, float id) {
+    void PickTechnique::setId(const std::string& name, float id) {
         shader->setFloat(name, id);
     }
 
@@ -21,4 +21,4 @@ namespace GraphicLib::Techniques {
         setId("gDrawIndex", _drawId);
         setId("gObjectIndex", _objectId);
     }
-}
+}    //namespace GraphicLib::Techniques

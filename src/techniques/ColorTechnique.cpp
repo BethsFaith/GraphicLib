@@ -10,14 +10,14 @@ namespace GraphicLib::Techniques {
     }
 
     void ColorTechnique::setColor(float r, float g, float b) {
-        _rgb = glm::vec3(r,g,b);
+        _rgb = glm::vec3(r, g, b);
     }
 
     void ColorTechnique::setColor(glm::vec3 rgb) {
         _rgb = rgb;
     }
 
-    const glm::vec3 &ColorTechnique::getRgb() const {
+    const glm::vec3& ColorTechnique::getRgb() const {
         return _rgb;
     }
-} // Techniques
+}    //namespace GraphicLib::Techniques

@@ -7,14 +7,14 @@
 namespace GraphicLib::Techniques {
     void TextureTechnique::execute() {
         shader->setInt("Texture", _textureIndex);
-        _texture->activate(GL_TEXTURE0+_textureIndex);
+        _texture->activate(GL_TEXTURE0 + _textureIndex);
     }
 
-    void TextureTechnique::setTexture(const Textures::Texture::Ptr &texture) {
+    void TextureTechnique::setTexture(const Textures::Texture::Ptr& texture) {
         _texture = texture;
     }
 
     void TextureTechnique::setTextureIndex(int textureIndex) {
         _textureIndex = textureIndex;
     }
-}
+}    //namespace GraphicLib::Techniques

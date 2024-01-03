@@ -5,10 +5,7 @@
 #include "../../headers/GraphicLib/Buffers/Fbo.hpp"
 
 namespace GraphicLib::Buffers {
-    FBO::FBO(GLuint mode, unsigned int texture)
-            : RaiiBuffer(3),
-              _texture(texture),
-              _mode(mode){
+    FBO::FBO(GLuint mode, unsigned int texture) : RaiiBuffer(3), _texture(texture), _mode(mode) {
         glGenFramebuffers(1, &_fbo);
     }
 
@@ -24,7 +21,7 @@ namespace GraphicLib::Buffers {
         glBindFramebuffer(_mode, 0);
     }
 
-    void FBO::bindData(const unsigned int &attachment) {
+    void FBO::bindData(const unsigned int& attachment) {
         bind();
         glFramebufferTexture2D(_mode, attachment, GL_TEXTURE_2D, _texture, 0);
         auto status = glCheckFramebufferStatus(GL_READ_FRAMEBUFFER);
@@ -53,4 +50,4 @@ namespace GraphicLib::Buffers {
     void FBO::draw() const {
         glDrawBuffer(_attachment);
     }
-}
+}    //namespace GraphicLib::Buffers

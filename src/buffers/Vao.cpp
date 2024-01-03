@@ -17,7 +17,7 @@ namespace GraphicLib::Buffers {
         glBindVertexArray(_vao);
     }
 
-    void VAO::bindData(const unsigned int &bindFlag) {}
+    void VAO::bindData(const unsigned int& bindFlag) {}
 
     void VAO::unbind() {
         glBindVertexArray(0);
@@ -26,4 +26,4 @@ namespace GraphicLib::Buffers {
     unsigned int VAO::get() const {
         return _vao;
     }
-}
+}    //namespace GraphicLib::Buffers

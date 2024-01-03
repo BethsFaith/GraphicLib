@@ -5,7 +5,7 @@
 #include "../../headers/GraphicLib/Techniques/TransformTechnique.hpp"
 
 namespace GraphicLib::Techniques {
-    void TransformTechnique::enableTransform(const glm::vec3 &transformValue) {
+    void TransformTechnique::enableTransform(const glm::vec3& transformValue) {
         _transformValue = transformValue;
         _needTransform = true;
     }
@@ -18,7 +18,7 @@ namespace GraphicLib::Techniques {
         _needTransform = false;
     }
 
-    void TransformTechnique::enableScale(const glm::vec3 &scaleValue) {
+    void TransformTechnique::enableScale(const glm::vec3& scaleValue) {
         _scaleValue = scaleValue;
         _needScale = true;
     }
@@ -31,7 +31,7 @@ namespace GraphicLib::Techniques {
         _needScale = false;
     }
 
-    void TransformTechnique::enableRotateValue(const Rotate &rotateValue) {
+    void TransformTechnique::enableRotateValue(const Rotate& rotateValue) {
         _rotateValue = rotateValue;
         _needRotate = true;
     }
@@ -59,15 +59,27 @@ namespace GraphicLib::Techniques {
         shader->set4FloatMat("Transform", glm::value_ptr(trans));
     }
 
-    const glm::vec3 &TransformTechnique::getTransformValue() const {
+    const glm::vec3& TransformTechnique::getTransformValue() const {
         return _transformValue;
     }
 
-    const glm::vec3 &TransformTechnique::getScaleValue() const {
+    const glm::vec3& TransformTechnique::getScaleValue() const {
         return _scaleValue;
     }
 
-    const TransformTechnique::Rotate &TransformTechnique::getRotateValue() const {
+    const TransformTechnique::Rotate& TransformTechnique::getRotateValue() const {
         return _rotateValue;
     }
-} // Techniques
+
+    void TransformTechnique::setTransformValue(const glm::vec3& transformValue) {
+        _transformValue = transformValue;
+    }
+
+    void TransformTechnique::setScaleValue(const glm::vec3& scaleValue) {
+        _scaleValue = scaleValue;
+    }
+
+    void TransformTechnique::setRotateValue(const TransformTechnique::Rotate& rotateValue) {
+        _rotateValue = rotateValue;
+    }
+}    //namespace GraphicLib::Techniques
