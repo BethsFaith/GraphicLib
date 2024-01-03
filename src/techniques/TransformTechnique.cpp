@@ -70,4 +70,16 @@ namespace GraphicLib::Techniques {
     const TransformTechnique::Rotate &TransformTechnique::getRotateValue() const {
         return _rotateValue;
     }
+
+    void TransformTechnique::setTransformValue(const glm::vec3& transformValue) {
+        _transformValue = transformValue;
+    }
+
+    void TransformTechnique::setScaleValue(const glm::vec3& scaleValue) {
+        _scaleValue = scaleValue;
+    }
+
+    void TransformTechnique::setRotateValue(const TransformTechnique::Rotate& rotateValue) {
+        _rotateValue = rotateValue;
+    }
 } // Techniques
