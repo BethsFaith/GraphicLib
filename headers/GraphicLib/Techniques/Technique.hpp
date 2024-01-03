@@ -23,10 +23,10 @@ namespace GraphicLib::Techniques {
 
         [[nodiscard]] bool isEnabled() const;
 
-        void setShader(GraphicLib::Shaders::ShaderProgram::Ptr shaderProgram);
+        void setShader(Shaders::ShaderProgram::Ptr shaderProgram);
 
     protected:
-        GraphicLib::Shaders::ShaderProgram::Ptr shader;
+        Shaders::ShaderProgram::Ptr shader;
 
     private:
         bool enabled = true;

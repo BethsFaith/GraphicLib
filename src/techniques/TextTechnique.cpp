@@ -14,8 +14,7 @@ namespace GraphicLib::Techniques {
         TextRenderer = std::make_shared<GraphicLib::TextRender>(width, height);
         TextRenderer->load(font, size);
 
-        Projection = glm::ortho(0.0f, static_cast<float>(width),
-                                               static_cast<float>(height), 0.0f);
+        Projection = glm::ortho(0.0f, static_cast<float>(width), static_cast<float>(height), 0.0f);
         ScreenWidth = width;
         ScreenHeight = height;
     }
@@ -37,21 +36,21 @@ namespace GraphicLib::Techniques {
         glEnable(GL_DEPTH_TEST);
     }
 
-    void TextTechnique::setText(const std::u16string &text) {
+    void TextTechnique::setText(const std::u16string& text) {
         _text = text;
     }
 
-    void TextTechnique::setColor(const glm::vec3 &color) {
+    void TextTechnique::setColor(const glm::vec3& color) {
         _color = color;
     }
 
     void TextTechnique::setWidth(float width) {
-        auto screen = ScreenWidth/2;
+        auto screen = ScreenWidth / 2;
         _width = screen + width * screen;
     }
 
     void TextTechnique::setHeight(float height) {
-        auto screen = ScreenHeight/2;
+        auto screen = ScreenHeight / 2;
         _height = screen - height * screen;
     }
 
@@ -63,11 +62,11 @@ namespace GraphicLib::Techniques {
         TextRenderer.reset();
     }
 
-    const std::u16string &TextTechnique::getText() const {
+    const std::u16string& TextTechnique::getText() const {
         return _text;
     }
 
-    const glm::vec3 &TextTechnique::getColor() const {
+    const glm::vec3& TextTechnique::getColor() const {
         return _color;
     }
 
@@ -76,10 +75,10 @@ namespace GraphicLib::Techniques {
     }
 
     float TextTechnique::getWidth() const {
-        return (_width - ScreenWidth/2);
+        return (_width - ScreenWidth / 2);
     }
 
     float TextTechnique::getHeight() const {
-        return (_height + ScreenHeight/2);
+        return (_height + ScreenHeight / 2);
     }
-}
+}    //namespace GraphicLib::Techniques

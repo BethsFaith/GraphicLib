@@ -11,7 +11,8 @@ namespace GraphicLib::Textures {
         bool res = false;
 
         int width, height, nrChannels;
-        unsigned char* data = stbi_load(texture.getPath().c_str(), &width, &height, &nrChannels, 0);
+        unsigned char* data = stbi_load(texture.getPath().c_str(), &width, &height,
+                                        &nrChannels, 0);
 
         if (data) {
             GLenum format;
