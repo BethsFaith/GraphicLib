@@ -124,19 +124,19 @@ namespace GraphicLib::Shaders {
         glUniform3f(glGetUniformLocation(ID, name.c_str()), c1, c2, c3);
     }
 
-    void ShaderProgram::set3FloatVector(const std::string &name, const glm::vec3 &vector) const {
+    void ShaderProgram::set3FloatVector(const std::string& name, const glm::vec3& vector) const {
         glUniform3f(glGetUniformLocation(ID, name.c_str()), vector.x, vector.y, vector.z);
     }
 
-    void ShaderProgram::set3UnsignedIntVector(const std::string &name, void *uiv) const {
-        glUniform3uiv(glGetUniformLocation(ID, name.c_str()), 1, (GLuint*) &uiv);
+    void ShaderProgram::set3UnsignedIntVector(const std::string& name, void* uiv) const {
+        glUniform3uiv(glGetUniformLocation(ID, name.c_str()), 1, (GLuint*)&uiv);
     }
 
     void ShaderProgram::set4FloatVector(const std::string& name, float c1, float c2, float c3, float c4) const {
         glUniform4f(glGetUniformLocation(ID, name.c_str()), c1, c2, c3, c4);
     }
 
-    void ShaderProgram::set4FloatVector(const std::string &name, const glm::vec4 &vector) const {
+    void ShaderProgram::set4FloatVector(const std::string& name, const glm::vec4& vector) const {
         glUniform4f(glGetUniformLocation(ID, name.c_str()), vector.x, vector.y, vector.z, vector.w);
     }
 
@@ -147,4 +147,4 @@ namespace GraphicLib::Shaders {
     unsigned int ShaderProgram::getId() const {
         return ID;
     }
-}
+}    //namespace GraphicLib::Shaders

@@ -20,4 +20,4 @@ namespace GraphicLib::Techniques {
     bool Technique::isEnabled() const {
         return enabled;
     }
-}
+}    //namespace GraphicLib::Techniques

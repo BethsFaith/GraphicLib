@@ -8,7 +8,8 @@
 
 namespace GraphicLib::Buffers {
     template<typename T>
-    VBO<T>::VBO(const std::vector<T> &data) : RaiiBuffer(1), _vertices(data) {
+    VBO<T>::VBO(const std::vector<T>& data) : RaiiBuffer(1),
+                                              _vertices(data) {
         glGenBuffers(1, &_vbo);
     }
 
@@ -23,9 +24,11 @@ namespace GraphicLib::Buffers {
     }
 
     template<typename T>
-    void VBO<T>::bindData(const unsigned int &bindFlag) {
-        glBufferData(GL_ARRAY_BUFFER, int(_vertices.size() * sizeof(T)),
-                     &_vertices[0], bindFlag); //_data.data(), bind_flag);
+    void VBO<T>::bindData(const unsigned int& bindFlag) {
+        glBufferData(GL_ARRAY_BUFFER,
+                     int(_vertices.size() * sizeof(T)),
+                     &_vertices[0],
+                     bindFlag);    //_data.data(), bind_flag);
     }
 
     template<typename T>
@@ -44,7 +47,7 @@ namespace GraphicLib::Buffers {
     }
 
     template<typename T>
-    const std::vector<T> &VBO<T>::getVertices() const {
+    const std::vector<T>& VBO<T>::getVertices() const {
         return _vertices;
     }
-}
+}    //namespace GraphicLib::Buffers

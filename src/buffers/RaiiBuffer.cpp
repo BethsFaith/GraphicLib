@@ -4,9 +4,9 @@
 #include "../../headers/GraphicLib/Buffers/RaiiBuffer.hpp"
 
 namespace GraphicLib::Buffers {
-    RaiiBuffer::RaiiBuffer(const int &priority) : _priority(priority) {}
+    RaiiBuffer::RaiiBuffer(const int& priority) : _priority(priority) {}
 
     unsigned int RaiiBuffer::getPriority() const {
         return _priority;
     }
-}
+}    //namespace GraphicLib::Buffers
