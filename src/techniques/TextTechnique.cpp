@@ -81,4 +81,14 @@ namespace GraphicLib::Techniques {
     float TextTechnique::getHeight() const {
         return (_height + ScreenHeight / 2);
     }
+
+    std::map<char16_t, TextRender::Character> TextTechnique::getCharactersOfText() {
+        std::map<char16_t, TextRender::Character> characters{};
+        if (TextRenderer != nullptr) {
+            for (const auto& code : _text) {
+                characters[code] = TextRenderer->getCharacter(code);
+            }
+        }
+        return characters;
+    }
 }    //namespace GraphicLib::Techniques

@@ -38,6 +38,7 @@ namespace GraphicLib {
 
         void render(std::u16string text, float x, float y, float scale, glm::vec3 color);
 
+        Character getCharacter(char16_t code);
     private:
         // Список предварительно скомпилированных символов
         std::map<char16_t, Character> characters;

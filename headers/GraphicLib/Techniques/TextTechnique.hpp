@@ -38,6 +38,7 @@ namespace GraphicLib::Techniques {
         [[nodiscard]] float getWidth() const;
         [[nodiscard]] float getHeight() const;
 
+        std::map<char16_t, TextRender::Character> getCharactersOfText();
     protected:
         static GraphicLib::TextRender::Ptr TextRenderer;
         static glm::mat4 Projection;
