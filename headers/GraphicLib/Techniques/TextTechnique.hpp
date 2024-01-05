@@ -19,6 +19,7 @@ namespace GraphicLib::Techniques {
 
         static void initTextRendering(unsigned int width, unsigned int height, std::string font, int size);
         static void freeTextRendering();
+        static TextRender::Ptr getTextRenderer();
 
         void execute() override;
 
@@ -38,6 +39,7 @@ namespace GraphicLib::Techniques {
         [[nodiscard]] float getWidth() const;
         [[nodiscard]] float getHeight() const;
 
+        std::map<char16_t, TextRender::Character> getCharactersOfText();
     protected:
         static GraphicLib::TextRender::Ptr TextRenderer;
         static glm::mat4 Projection;

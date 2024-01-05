@@ -8,7 +8,7 @@
 #include <iostream>
 #include <glm/gtc/matrix_transform.hpp>
 #include <ft2build.h>
-#include FT_FREETYPE_H "freetype2/freetype/freetype.h"
+#include FT_FREETYPE_H
 #include <map>
 #include <glm/glm.hpp>
 
@@ -38,6 +38,7 @@ namespace GraphicLib {
 
         void render(std::u16string text, float x, float y, float scale, glm::vec3 color);
 
+        Character getCharacter(char16_t code);
     private:
         // Список предварительно скомпилированных символов
         std::map<char16_t, Character> characters;
