@@ -19,6 +19,7 @@ namespace GraphicLib::Techniques {
 
         static void initTextRendering(unsigned int width, unsigned int height, std::string font, int size);
         static void freeTextRendering();
+        static TextRender::Ptr getTextRenderer();
 
         void execute() override;
 

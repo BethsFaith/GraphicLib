@@ -8,7 +8,7 @@
 #include <iostream>
 #include <glm/gtc/matrix_transform.hpp>
 #include <ft2build.h>
-#include FT_FREETYPE_H "freetype2/freetype/freetype.h"
+#include FT_FREETYPE_H
 #include <map>
 #include <glm/glm.hpp>
 
