@@ -75,10 +75,26 @@ namespace GraphicLib::Techniques {
     }
 
     float TextTechnique::getWidth() const {
-        return (_width - ScreenWidth / 2);
+        auto screen = ScreenWidth / 2;
+        return (_width - screen)/screen;
     }
 
     float TextTechnique::getHeight() const {
-        return (_height + ScreenHeight / 2);
+        auto screen = ScreenHeight / 2;
+        return (_height + screen)/screen;
+    }
+
+    std::map<char16_t, TextRender::Character> TextTechnique::getCharactersOfText() {
+        std::map<char16_t, TextRender::Character> characters{};
+        if (TextRenderer != nullptr) {
+            for (const auto& code : _text) {
+                characters[code] = TextRenderer->getCharacter(code);
+            }
+        }
+        return characters;
+    }
+
+    TextRender::Ptr TextTechnique::getTextRenderer() {
+        return TextRenderer;
     }
 }    //namespace GraphicLib::Techniques
