@@ -10,6 +10,8 @@
 namespace GraphicLib::Techniques {
     class TransformTechnique : public Technique {
     public:
+        using Ptr = std::shared_ptr<TransformTechnique>;
+
         struct Rotate {
             float angle{360.0f};
             glm::vec3 coordinates{0.0f};

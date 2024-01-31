@@ -10,7 +10,8 @@ namespace GraphicLib::Techniques {
         TRANSFORM,
         COLOR,
         PICK,
-        TEXT
+        TEXT,
+        TEXTURE
     };
 }
 

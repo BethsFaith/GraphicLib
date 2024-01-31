@@ -11,17 +11,21 @@
 namespace GraphicLib::Techniques {
     class TextureTechnique : public Technique {
     public:
+        using Ptr = std::shared_ptr<TextureTechnique>;
+
+        TextureTechnique() = default;
         ~TextureTechnique() override = default;
 
         void execute() override;
 
         void setTexture(const Textures::Texture::Ptr &texture);
-
         void setTextureIndex(int textureIndex);
 
+        [[nodiscard]] const Textures::Texture::Ptr& getTexture() const;
+        [[nodiscard]] int getTextureIndex() const;
     private:
         Textures::Texture::Ptr _texture;
-        int _textureIndex;
+        int _textureIndex{};
     };
 }
 
