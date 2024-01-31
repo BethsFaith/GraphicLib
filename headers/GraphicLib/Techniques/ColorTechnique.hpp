@@ -18,7 +18,7 @@ namespace GraphicLib::Techniques {
         void setColor(float r, float g, float b);
         void setColor(glm::vec3 rgb);
 
-        const glm::vec3 &getRgb() const;
+        [[nodiscard]] const glm::vec3 &getRgb() const;
 
     private:
         glm::vec3 _rgb{};

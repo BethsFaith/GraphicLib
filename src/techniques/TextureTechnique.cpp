@@ -17,4 +17,12 @@ namespace GraphicLib::Techniques {
     void TextureTechnique::setTextureIndex(int textureIndex) {
         _textureIndex = textureIndex;
     }
+
+    const Textures::Texture::Ptr& TextureTechnique::getTexture() const {
+        return _texture;
+    }
+
+    int TextureTechnique::getTextureIndex() const {
+        return _textureIndex;
+    }
 }    //namespace GraphicLib::Techniques

@@ -28,6 +28,7 @@ namespace GraphicLib {
         void removeTechnique(Techniques::TechniqueName name);
         void enableTechnique(Techniques::TechniqueName name);
         void disableTechnique(Techniques::TechniqueName name);
+        bool hasTechnique(Techniques::TechniqueName name);
 
         void setPrimitive(const GraphicLib::Primitives::AbstractPrimitive::Ptr &primitive);
 

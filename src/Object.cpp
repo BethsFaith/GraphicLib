@@ -42,4 +42,8 @@ namespace GraphicLib {
     void Object::setPrimitive(const GraphicLib::Primitives::AbstractPrimitive::Ptr &primitive) {
         _primitive = primitive;
     }
+
+    bool Object::hasTechnique(Techniques::TechniqueName name) {
+        return techniques.contains(name);
+    }
 }

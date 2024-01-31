@@ -13,11 +13,10 @@ namespace GraphicLib::Techniques  {
         using Ptr = std::shared_ptr<PickTechnique>;
 
         PickTechnique() = default;
+        ~PickTechnique() override = default;
 
         void setDrawId(float drawId);
         void setObjectId(float objectId);
-
-        ~PickTechnique() override = default;
 
         void execute() override;
 
