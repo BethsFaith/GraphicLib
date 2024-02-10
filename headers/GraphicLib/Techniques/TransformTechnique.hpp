@@ -10,8 +10,6 @@
 namespace GraphicLib::Techniques {
     class TransformTechnique : public Technique {
     public:
-        using Ptr = std::shared_ptr<TransformTechnique>;
-
         struct Rotate {
             float angle{360.0f};
             glm::vec3 coordinates{0.0f};
@@ -30,14 +28,19 @@ namespace GraphicLib::Techniques {
         void enableScale();
         void disableScale();
 
-        void enableRotateValue(const Rotate &rotateValue);
-        void enableRotateValue();
-        void disableRotateValue();
+        void enableRotate(const Rotate& rotateValue);
+        void enableRotate();
+        void disableRotate();
+
+        void enableProjection(float angle, float width, float height);
+        void enableProjection();
+        void disableProjection();
 
         [[nodiscard]] const glm::vec3 &getTransformValue() const;
         [[nodiscard]] const glm::vec3 &getScaleValue() const;
         [[nodiscard]] const Rotate &getRotateValue() const;
         void setTransformValue(const glm::vec3& transformValue);
+        void setProjectionValue(float angle, float width, float height);
         void setScaleValue(const glm::vec3& scaleValue);
         void setRotateValue(const Rotate& rotateValue);
 
@@ -45,10 +48,12 @@ namespace GraphicLib::Techniques {
         bool _needRotate = false;
         bool _needScale = false;
         bool _needTransform = false;
+        bool _needProjection = false;
 
         glm::vec3 _transformValue{0.0f};
         glm::vec3 _scaleValue{0.0f};
         Rotate _rotateValue{};
+        glm::mat4 _projectionValue{0.0f};
     };
 
 } // Techiques
