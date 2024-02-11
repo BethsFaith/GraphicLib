@@ -74,6 +74,8 @@ namespace GraphicLib::Techniques {
         if (_needProjection) {
             shader->set4FloatMat("Projection", glm::value_ptr(_projectionValue));
         }
+
+        shader->setBool("NeedProjection", _needProjection);
     }
 
     const glm::vec3& TransformTechnique::getTransformValue() const {
