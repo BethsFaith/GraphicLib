@@ -44,8 +44,8 @@ namespace GraphicLib::Techniques {
         _needRotate = false;
     }
 
-    void TransformTechnique::enableProjection(float angle, float width, float height) {
-        _projectionValue = glm::perspective(glm::radians(angle), width/height, 0.1f, 100.0f);
+    void TransformTechnique::enableProjection(float minX, float maxX, float minY, float maxY) {
+        _projectionValue = glm::ortho(minX, maxX, minY, maxY);
         _needProjection = true;
     }
 
@@ -100,7 +100,7 @@ namespace GraphicLib::Techniques {
         _rotateValue = rotateValue;
     }
 
-    void TransformTechnique::setProjectionValue(float angle, float width, float height) {
-        _projectionValue = glm::perspective(glm::radians(angle), width/height, 0.1f, 100.0f);
+    void TransformTechnique::setProjectionValue(float minX, float maxX, float minY, float maxY) {
+        _projectionValue = glm::ortho(minX, maxX, minY, maxY);
     }
 }    //namespace GraphicLib::Techniques

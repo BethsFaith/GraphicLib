@@ -22,11 +22,11 @@ namespace GraphicLib::Techniques {
 
         void execute() override;
 
-        void enableTransform(const glm::vec3 &transformValue);
+        void enableTransform(const glm::vec3& transformValue);
         void enableTransform();
         void disableTransform();
 
-        void enableScale(const glm::vec3 &scaleValue);
+        void enableScale(const glm::vec3& scaleValue);
         void enableScale();
         void disableScale();
 
@@ -34,17 +34,18 @@ namespace GraphicLib::Techniques {
         void enableRotate();
         void disableRotate();
 
-        void enableProjection(float angle, float width, float height);
+        void enableProjection(float minX, float maxX, float minY, float maxY);
         void enableProjection();
         void disableProjection();
 
-        [[nodiscard]] const glm::vec3 &getTransformValue() const;
-        [[nodiscard]] const glm::vec3 &getScaleValue() const;
-        [[nodiscard]] const Rotate &getRotateValue() const;
         void setTransformValue(const glm::vec3& transformValue);
-        void setProjectionValue(float angle, float width, float height);
+        void setProjectionValue(float minX, float maxX, float minY, float maxY);
         void setScaleValue(const glm::vec3& scaleValue);
         void setRotateValue(const Rotate& rotateValue);
+
+        [[nodiscard]] const glm::vec3& getTransformValue() const;
+        [[nodiscard]] const glm::vec3& getScaleValue() const;
+        [[nodiscard]] const Rotate& getRotateValue() const;
 
     private:
         bool _needRotate = false;
@@ -58,6 +59,6 @@ namespace GraphicLib::Techniques {
         glm::mat4 _projectionValue{0.0f};
     };
 
-} // Techiques
+}    //namespace GraphicLib::Techniques
 
-#endif //ROLLANDPLAY_TRANSFORMTECHNIQUE_HPP
+#endif    //ROLLANDPLAY_TRANSFORMTECHNIQUE_HPP
