@@ -31,17 +31,30 @@ namespace GraphicLib::Techniques {
         _needScale = false;
     }
 
-    void TransformTechnique::enableRotateValue(const Rotate& rotateValue) {
+    void TransformTechnique::enableRotate(const Rotate& rotateValue) {
         _rotateValue = rotateValue;
         _needRotate = true;
     }
 
-    void TransformTechnique::enableRotateValue() {
+    void TransformTechnique::enableRotate() {
         _needRotate = true;
     }
 
-    void TransformTechnique::disableRotateValue() {
+    void TransformTechnique::disableRotate() {
         _needRotate = false;
+    }
+
+    void TransformTechnique::enableProjection(float minX, float maxX, float minY, float maxY) {
+        _projectionValue = glm::ortho(minX, maxX, minY, maxY);
+        _needProjection = true;
+    }
+
+    void TransformTechnique::enableProjection() {
+        _needProjection = true;
+    }
+
+    void TransformTechnique::disableProjection() {
+        _needProjection = false;
     }
 
     void TransformTechnique::execute() {
@@ -57,6 +70,12 @@ namespace GraphicLib::Techniques {
         }
 
         shader->set4FloatMat("Transform", glm::value_ptr(trans));
+
+        if (_needProjection) {
+            shader->set4FloatMat("Projection", glm::value_ptr(_projectionValue));
+        }
+
+        shader->setBool("NeedProjection", _needProjection);
     }
 
     const glm::vec3& TransformTechnique::getTransformValue() const {
@@ -81,5 +100,9 @@ namespace GraphicLib::Techniques {
 
     void TransformTechnique::setRotateValue(const TransformTechnique::Rotate& rotateValue) {
         _rotateValue = rotateValue;
+    }
+
+    void TransformTechnique::setProjectionValue(float minX, float maxX, float minY, float maxY) {
+        _projectionValue = glm::ortho(minX, maxX, minY, maxY);
     }
 }    //namespace GraphicLib::Techniques
