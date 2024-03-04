@@ -7,7 +7,7 @@
 
 #include <iostream>
 
-#include "GraphicLib/Objects/GlagGlfw.hpp"
+#include "GraphicLib/GlagGlfw.hpp"
 
 namespace GraphicLib::Objects::Buffers {
     class RaiiBuffer {

@@ -25,7 +25,7 @@ add_library(GraphicLib
         src/objects/PickableTexture.cpp
         src/objects/primitives/Primitive.cpp
         src/objects/primitives/Rectangle.cpp
-        src/objects/shaders/ShaderProgram.cpp
+        src/shaders/ShaderProgram.cpp
         src/objects/buffers/Vertex.cpp
         src/objects/buffers/Vbo.cpp
         src/objects/buffers/VboT.cpp
@@ -41,6 +41,10 @@ add_library(GraphicLib
         src/objects/techniques/PickTechnique.cpp
         src/objects/techniques/ColorTechnique.cpp
         src/objects/techniques/TextureTechnique.cpp
+        src/widgets/Widget.cpp
+        src/widgets/WidgetBuilder.cpp
+        src/widgets/WidgetFactory.cpp
+        src/widgets/Gui.cpp
         src/widgets/Button.cpp
         src/widgets/Carriage.cpp
         src/widgets/HorizontalLayout.cpp
@@ -52,9 +56,6 @@ add_library(GraphicLib
         src/widgets/TextBox.cpp
         src/widgets/TextInputField.cpp
         src/widgets/VerticalLayout.cpp
-        src/widgets/Widget.cpp
-        src/widgets/WidgetBuilder.cpp
-        src/widgets/WidgetFactory.cpp
         src/widgets/graphic/Form.cpp
         src/widgets/graphic/PickableForm.cpp
         src/widgets/styles/Color.cpp
@@ -65,7 +66,7 @@ add_library(GraphicLib
         src/controllers/MenuBarController.cpp
         src/controllers/TextInputFieldController.cpp
         src/controllers/WidgetControllerFactory.cpp
-        headers/GraphicLib/Objects/FT2.hpp)
+        )
 
 target_link_libraries(GraphicLib ${CONAN_LIBS})
 target_include_directories(GraphicLib PUBLIC headers)

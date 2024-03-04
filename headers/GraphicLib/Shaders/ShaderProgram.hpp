@@ -17,7 +17,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-namespace GraphicLib::Objects::Shaders {
+namespace GraphicLib::Shaders {
     class ShaderProgram {
     public:
         using Ptr = std::shared_ptr<ShaderProgram>;

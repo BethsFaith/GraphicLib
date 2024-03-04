@@ -8,8 +8,8 @@
 #include <map>
 #include <utility>
 
+#include "GraphicLib/Shaders/ShaderProgram.hpp"
 #include "GraphicLib/Objects/Primitives/AbstractPrimitive.hpp"
-#include "GraphicLib/Objects/Shaders/ShaderProgram.hpp"
 #include "GraphicLib/Objects/Techniques/Technique.hpp"
 #include "GraphicLib/Objects/Techniques/TechniqueName.hpp"
 

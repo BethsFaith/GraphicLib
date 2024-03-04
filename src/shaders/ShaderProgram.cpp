@@ -2,9 +2,9 @@
 // Created by VerOchka on 10.10.2023.
 //
 
-#include "GraphicLib/Objects/Shaders/ShaderProgram.hpp"
+#include "GraphicLib/Shaders/ShaderProgram.hpp"
 
-namespace GraphicLib::Objects::Shaders {
+namespace GraphicLib::Shaders {
     ShaderProgram::ShaderProgram(const std::string& vertexPath, const std::string& fragmentPath) {
         // Этап №1: Получение исходного кода вершинного/фрагментного шейдера из переменной filePath
         std::string vertexCode;

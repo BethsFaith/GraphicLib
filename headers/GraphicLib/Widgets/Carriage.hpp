@@ -25,7 +25,7 @@ namespace GraphicLib::Widgets {
 
         void init(Styles::Color color, const glm::vec2& scale, const glm::vec2& position, float textSize);
 
-        void render(const Objects::Shaders::ShaderProgram::Ptr& shader);
+        void render(const Shaders::ShaderProgram::Ptr& shader);
 
         void show();
         void hide();

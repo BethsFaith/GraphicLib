@@ -7,7 +7,7 @@
 
 #include <utility>
 
-#include "GraphicLib/Objects/Shaders/ShaderProgram.hpp"
+#include "GraphicLib/Shaders/ShaderProgram.hpp"
 
 namespace GraphicLib::Objects::Techniques {
     class Technique {

@@ -22,10 +22,10 @@ namespace GraphicLib::Widgets {
         explicit Button(Objects::Primitives::AbstractPrimitive::Ptr graphicPrimitive);
         ~Button() override = default;
 
-        void draw(Objects::Shaders::ShaderProgram::Ptr colorShader,
-                  Objects::Shaders::ShaderProgram::Ptr textureShader,
-                  Objects::Shaders::ShaderProgram::Ptr textShader,
-                  Objects::Shaders::ShaderProgram::Ptr pickShader) override;
+        void draw(Shaders::ShaderProgram::Ptr colorShader,
+                  Shaders::ShaderProgram::Ptr textureShader,
+                  Shaders::ShaderProgram::Ptr textShader,
+                  Shaders::ShaderProgram::Ptr pickShader) override;
 
         bool checkSelecting(unsigned int x, unsigned int y) override;
 

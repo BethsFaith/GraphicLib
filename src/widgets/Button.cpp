@@ -22,10 +22,10 @@ namespace GraphicLib::Widgets {
         _tracing.setColor(getRGB(Styles::Color::WHITE));
     }
 
-    void Button::draw(Objects::Shaders::ShaderProgram::Ptr colorShader,
-                      Objects::Shaders::ShaderProgram::Ptr textureShader,
-                      Objects::Shaders::ShaderProgram::Ptr textShader,
-                      Objects::Shaders::ShaderProgram::Ptr pickShader) {
+    void Button::draw(Shaders::ShaderProgram::Ptr colorShader,
+                      Shaders::ShaderProgram::Ptr textureShader,
+                      Shaders::ShaderProgram::Ptr textShader,
+                      Shaders::ShaderProgram::Ptr pickShader) {
         if (isUnderCursor()) {
             glStencilMask(0xFF);
             glStencilFunc(GL_ALWAYS, 1, 0xFF);

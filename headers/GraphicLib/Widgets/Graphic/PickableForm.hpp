@@ -14,7 +14,7 @@ namespace GraphicLib::Widgets::Graphic {
 
         PickableForm(const Objects::Primitives::AbstractPrimitive::Ptr& graphicPrimitive, float identifier);
 
-        void renderPick(Objects::Shaders::ShaderProgram::Ptr shader, const Objects::PickableTexture::Ptr& canvas);
+        void renderPick(Shaders::ShaderProgram::Ptr shader, const Objects::PickableTexture::Ptr& canvas);
     };
 }
 

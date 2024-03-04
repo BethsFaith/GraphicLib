@@ -5,8 +5,9 @@
 #ifndef ROLLANDPLAY_GLCONTROLLER_HPP
 #define ROLLANDPLAY_GLCONTROLLER_HPP
 
-#include "GraphicLib/Objects/GlagGlfw.hpp"
 #include <iostream>
+
+#include "GraphicLib/GlagGlfw.hpp"
 
 namespace GraphicLib::Controllers {
     class GLController {

@@ -28,10 +28,10 @@ namespace GraphicLib::Widgets {
 
         ~TextInputField() override = default;
 
-        void draw(Objects::Shaders::ShaderProgram::Ptr colorShader,
-                  Objects::Shaders::ShaderProgram::Ptr textureShader,
-                  Objects::Shaders::ShaderProgram::Ptr textShader,
-                  Objects::Shaders::ShaderProgram::Ptr pickShader) override;
+        void draw(Shaders::ShaderProgram::Ptr colorShader,
+                  Shaders::ShaderProgram::Ptr textureShader,
+                  Shaders::ShaderProgram::Ptr textShader,
+                  Shaders::ShaderProgram::Ptr pickShader) override;
 
         void setTransform(glm::vec2 position, glm::vec2 scale) override;
         void setTransform(glm::vec2 position) override;

@@ -55,10 +55,10 @@ namespace GraphicLib::Widgets {
         _form->setTextSize(size);
     }
 
-    void TextBox::draw(Objects::Shaders::ShaderProgram::Ptr colorShader,
-                       Objects::Shaders::ShaderProgram::Ptr textureShader,
-                       Objects::Shaders::ShaderProgram::Ptr textShader,
-                       Objects::Shaders::ShaderProgram::Ptr pickShader) {
+    void TextBox::draw(Shaders::ShaderProgram::Ptr colorShader,
+                       Shaders::ShaderProgram::Ptr textureShader,
+                       Shaders::ShaderProgram::Ptr textShader,
+                       Shaders::ShaderProgram::Ptr pickShader) {
         _form->renderForm(colorShader);
         _form->renderText(textShader);
     }

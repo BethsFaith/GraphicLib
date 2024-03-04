@@ -5,15 +5,14 @@
 #ifndef ROLLANDPLAY_FORM_HPP
 #define ROLLANDPLAY_FORM_HPP
 
-#include "GraphicLib/Objects/GlagGlfw.hpp"
+#include "GraphicLib/GlagGlfw.hpp"
 #include "GraphicLib/Objects/Object.hpp"
+#include "GraphicLib/Objects/PickableTexture.hpp"
 #include "GraphicLib/Objects/Techniques/ColorTechnique.hpp"
 #include "GraphicLib/Objects/Techniques/PickTechnique.hpp"
 #include "GraphicLib/Objects/Techniques/TextTechnique.hpp"
-#include "GraphicLib/Objects/Techniques/TransformTechnique.hpp"
 #include "GraphicLib/Objects/Techniques/TextureTechnique.hpp"
-
-#include "GraphicLib/Objects/PickableTexture.hpp"
+#include "GraphicLib/Objects/Techniques/TransformTechnique.hpp"
 
 namespace GraphicLib::Widgets::Graphic {
     class Form {
@@ -42,8 +41,8 @@ namespace GraphicLib::Widgets::Graphic {
         glm::vec3 getColor();
         Objects::Textures::Texture::Ptr getTexture();
 
-        virtual void renderText(Objects::Shaders::ShaderProgram::Ptr shader);
-        virtual void renderForm(Objects::Shaders::ShaderProgram::Ptr shader);
+        virtual void renderText(Shaders::ShaderProgram::Ptr shader);
+        virtual void renderForm(Shaders::ShaderProgram::Ptr shader);
 
     protected:
         Objects::Object _object{};

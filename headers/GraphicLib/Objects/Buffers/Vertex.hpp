@@ -9,7 +9,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-#include "GraphicLib/Objects/GlagGlfw.hpp"
+#include "GraphicLib/GlagGlfw.hpp"
 
 namespace GraphicLib::Objects::Buffers {
     struct Vertex {

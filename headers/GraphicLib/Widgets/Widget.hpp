@@ -5,9 +5,9 @@
 #ifndef ROLLANDPLAY_WIDGET_HPP
 #define ROLLANDPLAY_WIDGET_HPP
 
+#include "GraphicLib/Shaders/ShaderProgram.hpp"
 #include "GraphicLib/Objects/PickableTexture.hpp"
-#include "GraphicLib/Objects/Shaders/ShaderProgram.hpp"
-
+#include "GraphicLib/Shaders/ShaderProgram.hpp"
 #include "WidgetType.hpp"
 
 namespace GraphicLib::Widgets {
@@ -20,10 +20,10 @@ namespace GraphicLib::Widgets {
 
         virtual bool checkSelecting(unsigned int x, unsigned int y) = 0;
 
-        virtual void draw(Objects::Shaders::ShaderProgram::Ptr colorShader,
-                          Objects::Shaders::ShaderProgram::Ptr textureShader,
-                          Objects::Shaders::ShaderProgram::Ptr textShader,
-                          Objects::Shaders::ShaderProgram::Ptr pickShader) = 0;
+        virtual void draw(Shaders::ShaderProgram::Ptr colorShader,
+                          Shaders::ShaderProgram::Ptr textureShader,
+                          Shaders::ShaderProgram::Ptr textShader,
+                          Shaders::ShaderProgram::Ptr pickShader) = 0;
 
         virtual void setTransform(glm::vec2 position, glm::vec2 scale) = 0;
         virtual void setTransform(glm::vec2 position) = 0;

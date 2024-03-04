@@ -10,11 +10,11 @@
 #include <iostream>
 #include <map>
 
-#include "GlagGlfw.hpp"
-#include "FT2.hpp"
+#include "GraphicLib/FT2.hpp"
+#include "GraphicLib/GlagGlfw.hpp"
+#include "GraphicLib/Shaders/ShaderProgram.hpp"
 #include "GraphicLib/Objects/Buffers/Vao.hpp"
 #include "GraphicLib/Objects/Buffers/Vbo.hpp"
-#include "GraphicLib/Objects/Shaders/ShaderProgram.hpp"
 #include "GraphicLib/Objects/Textures/Texture.hpp"
 
 namespace GraphicLib::Objects {

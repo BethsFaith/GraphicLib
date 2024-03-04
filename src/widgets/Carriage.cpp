@@ -33,7 +33,7 @@ namespace GraphicLib::Widgets {
         _initXPosition = position.x;
     }
 
-    void Carriage::render(const Objects::Shaders::ShaderProgram::Ptr& shader) {
+    void Carriage::render(const Shaders::ShaderProgram::Ptr& shader) {
         _object->render(shader);
     }
 

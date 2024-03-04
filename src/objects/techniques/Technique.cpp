@@ -5,7 +5,7 @@
 #include "GraphicLib/Objects/Techniques/Technique.hpp"
 
 namespace GraphicLib::Objects::Techniques {
-    void Technique::setShader(GraphicLib::Objects::Shaders::ShaderProgram::Ptr shaderProgram) {
+    void Technique::setShader(Shaders::ShaderProgram::Ptr shaderProgram) {
         shader = std::move(shaderProgram);
     }
 

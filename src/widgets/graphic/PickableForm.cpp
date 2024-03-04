@@ -17,8 +17,7 @@ namespace GraphicLib::Widgets::Graphic {
         _object.disableTechnique(Objects::Techniques::PICK);
     }
 
-    void PickableForm::renderPick(Objects::Shaders::ShaderProgram::Ptr shader,
-                                  const Objects::PickableTexture::Ptr& canvas) {
+    void PickableForm::renderPick(Shaders::ShaderProgram::Ptr shader, const Objects::PickableTexture::Ptr& canvas) {
         canvas->enableWriting();
 
         _object.enableTechnique(Objects::Techniques::PICK);

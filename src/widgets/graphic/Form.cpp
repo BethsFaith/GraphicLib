@@ -156,7 +156,7 @@ namespace GraphicLib::Widgets::Graphic {
         textureTechnique->setTextureIndex(textureIndex);
     }
 
-    void Form::renderText(Objects::Shaders::ShaderProgram::Ptr shader) {
+    void Form::renderText(Shaders::ShaderProgram::Ptr shader) {
         _object.enableTechnique(Objects::Techniques::TEXT);
 
         _object.render(std::move(shader));
@@ -164,7 +164,7 @@ namespace GraphicLib::Widgets::Graphic {
         _object.disableTechnique(Objects::Techniques::TEXT);
     }
 
-    void Form::renderForm(Objects::Shaders::ShaderProgram::Ptr shader) {
+    void Form::renderForm(Shaders::ShaderProgram::Ptr shader) {
         if (_object.hasTechnique(Objects::Techniques::TEXTURE)) {
             _object.enableTechnique(Objects::Techniques::TEXTURE);
             _object.enableTechnique(Objects::Techniques::TRANSFORM);
