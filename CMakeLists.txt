@@ -20,27 +20,52 @@ conan_cmake_run(CONANFILE
 
 add_library(GraphicLib
         libs/stb_image.cpp
-        src/primitives/Primitive.cpp
-        src/primitives/Rectangle.cpp
+        src/objects/Object.cpp
+        src/objects/TextRender.cpp
+        src/objects/PickableTexture.cpp
+        src/objects/primitives/Primitive.cpp
+        src/objects/primitives/Rectangle.cpp
         src/shaders/ShaderProgram.cpp
-        src/buffers/Vertex.cpp
-        src/buffers/Vbo.cpp
-        src/buffers/VboT.cpp
-        src/buffers/Vao.cpp
-        src/buffers/RaiiBuffer.cpp
-        src/buffers/Ebo.cpp
-        src/buffers/Fbo.cpp
-        src/textures/Loader.cpp
-        src/textures/Texture.cpp
-        src/techniques/Technique.cpp
-        src/techniques/TextTechnique.cpp
-        src/techniques/TransformTechnique.cpp
-        src/techniques/PickTechnique.cpp
-        src/techniques/ColorTechnique.cpp
-        src/techniques/TextureTechnique.cpp
-        src/Object.cpp
-        src/TextRender.cpp
-        src/PickableTexture.cpp
+        src/objects/buffers/Vertex.cpp
+        src/objects/buffers/Vbo.cpp
+        src/objects/buffers/VboT.cpp
+        src/objects/buffers/Vao.cpp
+        src/objects/buffers/RaiiBuffer.cpp
+        src/objects/buffers/Ebo.cpp
+        src/objects/buffers/Fbo.cpp
+        src/objects/textures/Loader.cpp
+        src/objects/textures/Texture.cpp
+        src/objects/techniques/Technique.cpp
+        src/objects/techniques/TextTechnique.cpp
+        src/objects/techniques/TransformTechnique.cpp
+        src/objects/techniques/PickTechnique.cpp
+        src/objects/techniques/ColorTechnique.cpp
+        src/objects/techniques/TextureTechnique.cpp
+        src/widgets/Widget.cpp
+        src/widgets/WidgetBuilder.cpp
+        src/widgets/WidgetFactory.cpp
+        src/widgets/Gui.cpp
+        src/widgets/Button.cpp
+        src/widgets/Carriage.cpp
+        src/widgets/HorizontalLayout.cpp
+        src/widgets/ImageBox.cpp
+        src/widgets/ImageButton.cpp
+        src/widgets/Layout.cpp
+        src/widgets/MenuBar.cpp
+        src/widgets/NumericInputField.cpp
+        src/widgets/TextBox.cpp
+        src/widgets/TextInputField.cpp
+        src/widgets/VerticalLayout.cpp
+        src/widgets/graphic/Form.cpp
+        src/widgets/graphic/PickableForm.cpp
+        src/widgets/styles/Color.cpp
+        src/controllers/GuiController.cpp
+        src/controllers/ButtonController.cpp
+        src/controllers/CommonController.cpp
+        src/controllers/ImageButtonController.cpp
+        src/controllers/MenuBarController.cpp
+        src/controllers/TextInputFieldController.cpp
+        src/controllers/WidgetControllerFactory.cpp
         )
 
 target_link_libraries(GraphicLib ${CONAN_LIBS})
