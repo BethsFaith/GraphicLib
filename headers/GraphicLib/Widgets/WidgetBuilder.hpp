@@ -12,14 +12,18 @@ namespace GraphicLib::Widgets {
     class WidgetBuilder {
     public:
         using Ptr = std::shared_ptr<WidgetBuilder>;
- 
+
         void addWidgetStyle(WidgetType type, const Styles::WidgetStyle::Ptr& style);
+        void addWidgetStyle(WidgetType type, std::string styleClass, const Styles::WidgetStyle::Ptr& style);
         void addLayoutStyle(LayoutType type, const Styles::LayoutStyle::Ptr& style);
-        
+
+        Widget::Ptr createWidget(WidgetType type, std::string styleClass);
         Widget::Ptr createWidget(WidgetType type);
         Layout::Ptr createLayout(LayoutType type);
+
+        const std::string DEFAULT_STYLE = "default";
     private:
-        std::map<WidgetType, Styles::WidgetStyle::Ptr> styles;
+        std::unordered_map<std::string, Styles::WidgetStyle::Ptr> styles;
         std::map<LayoutType, Styles::LayoutStyle::Ptr> layoutStyles;
     };
 }
