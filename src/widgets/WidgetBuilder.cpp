@@ -34,7 +34,7 @@ namespace GraphicLib::Widgets {
     }
 
     Styles::WidgetStyle::Ptr WidgetBuilder::getWidgetStyle(WidgetType type, const std::string& styleClass) {
-        return styles[styleClass];
+        return styles[std::to_string(type)+styleClass];
     }
 
     Styles::LayoutStyle::Ptr WidgetBuilder::getLayoutStyle(LayoutType type) {
