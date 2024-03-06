@@ -14,12 +14,16 @@ namespace GraphicLib::Widgets {
         using Ptr = std::shared_ptr<WidgetBuilder>;
 
         void addWidgetStyle(WidgetType type, const Styles::WidgetStyle::Ptr& style);
-        void addWidgetStyle(WidgetType type, std::string styleClass, const Styles::WidgetStyle::Ptr& style);
+        void addWidgetStyle(WidgetType type, const std::string& styleClass, const Styles::WidgetStyle::Ptr& style);
         void addLayoutStyle(LayoutType type, const Styles::LayoutStyle::Ptr& style);
 
-        Widget::Ptr createWidget(WidgetType type, std::string styleClass);
+        Widget::Ptr createWidget(WidgetType type, const std::string& styleClass);
         Widget::Ptr createWidget(WidgetType type);
         Layout::Ptr createLayout(LayoutType type);
+
+        Styles::WidgetStyle::Ptr getWidgetStyle(WidgetType type, const std::string& styleClass);
+        Styles::WidgetStyle::Ptr getWidgetStyle(WidgetType type);
+        Styles::LayoutStyle::Ptr getLayoutStyle(LayoutType type);
 
         const std::string DEFAULT_STYLE = "default";
     private:

@@ -9,7 +9,7 @@ namespace GraphicLib::Widgets {
         addWidgetStyle(type, DEFAULT_STYLE, style);
     }
 
-    void WidgetBuilder::addWidgetStyle(WidgetType type, std::string styleClass, const Styles::WidgetStyle::Ptr& style) {
+    void WidgetBuilder::addWidgetStyle(WidgetType type, const std::string& styleClass, const Styles::WidgetStyle::Ptr& style) {
         styles[std::to_string(type)+styleClass] = style;
     }
 
@@ -17,7 +17,7 @@ namespace GraphicLib::Widgets {
         return createWidget(type, DEFAULT_STYLE);
     }
 
-    Widget::Ptr WidgetBuilder::createWidget(WidgetType type, std::string styleClass) {
+    Widget::Ptr WidgetBuilder::createWidget(WidgetType type, const std::string& styleClass) {
         return WidgetFactory::create(type, styles[std::to_string(type)+styleClass]);
     }
 
@@ -27,5 +27,17 @@ namespace GraphicLib::Widgets {
 
     Layout::Ptr WidgetBuilder::createLayout(LayoutType type) {
         return WidgetFactory::create(type, layoutStyles[type]);
+    }
+
+    Styles::WidgetStyle::Ptr WidgetBuilder::getWidgetStyle(WidgetType type) {
+        return getWidgetStyle(type, DEFAULT_STYLE);
+    }
+
+    Styles::WidgetStyle::Ptr WidgetBuilder::getWidgetStyle(WidgetType type, const std::string& styleClass) {
+        return styles[styleClass];
+    }
+
+    Styles::LayoutStyle::Ptr WidgetBuilder::getLayoutStyle(LayoutType type) {
+        return layoutStyles[type];
     }
 }
