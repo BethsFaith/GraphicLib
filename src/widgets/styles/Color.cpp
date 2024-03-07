@@ -32,7 +32,7 @@ namespace GraphicLib::Widgets::Styles {
             case LIGHT_VIOLET:
                 return {0.57f, 0.45f, 0.68f};
             case LIGHT_GREEN:
-                return  {0.75f, 1.0f, 0.66f};
+                return  {0.79f, 1.0f, 0.79f};
             case DARK_GRAY:
                 return glm::vec3{0.1f};
             case DARK_BLUE:
