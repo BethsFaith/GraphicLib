@@ -21,12 +21,19 @@ namespace GraphicLib::Widgets::Styles {
         ORANGE,
         VIOLET,
         LIGHT_GRAY,
-        LIGHT_BLUE,
-        LIGHT_VIOLET,
+        LIGHT_RED,
         LIGHT_GREEN,
+        LIGHT_BLUE,
+        LIGHT_YELLOW,
+        LIGHT_ORANGE,
+        LIGHT_VIOLET,
         DARK_GRAY,
-        DARK_BLUE,
+        DARK_RED,
         DARK_GREEN,
+        DARK_BLUE,
+        DARK_YELLOW,
+        DARK_ORANGE,
+        DARK_VIOLET,
     };
 
     [[maybe_unused]] glm::vec3 getRGB(Color color);
