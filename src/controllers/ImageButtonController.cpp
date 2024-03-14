@@ -63,7 +63,7 @@ namespace GraphicLib::Controllers {
     void ImageButtonController::processDrop(GLFWwindow* window, int count, const char** paths) {
         if (count == 1) {
             if (target->owner == this && target->widget.lock() != nullptr) {
-                auto targetImageButton = std::dynamic_pointer_cast<Widgets::ImageButton>(target->widget.lock());
+                auto targetImageButton = std::dynamic_pointer_cast<GuiObjects::ImageButton>(target->widget.lock());
                 targetImageButton->setImage(paths[0], 0);
                 targetImageButton->release();
             }
@@ -79,11 +79,11 @@ namespace GraphicLib::Controllers {
         _buttons.clear();
     }
 
-    void ImageButtonController::addWidget(Widgets::Widget::Ptr widget) {
-        _buttons.push_back(std::dynamic_pointer_cast<Widgets::ImageButton>(widget));
+    void ImageButtonController::addWidget(GuiObjects::Widget::Ptr widget) {
+        _buttons.push_back(std::dynamic_pointer_cast<GuiObjects::ImageButton>(widget));
     }
 
-    void ImageButtonController::removeWidget(const Widgets::Widget::Ptr& widget) {
+    void ImageButtonController::removeWidget(const GuiObjects::Widget::Ptr& widget) {
         auto end = std::remove(_buttons.begin(), _buttons.end(), widget);
         _buttons.erase(end, _buttons.end());
     }

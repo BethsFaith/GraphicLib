@@ -41,26 +41,26 @@ add_library(GraphicLib
         src/objects/techniques/PickTechnique.cpp
         src/objects/techniques/ColorTechnique.cpp
         src/objects/techniques/TextureTechnique.cpp
-        src/widgets/Widget.cpp
-        src/widgets/WidgetBuilder.cpp
-        src/widgets/WidgetFactory.cpp
-        src/widgets/Gui.cpp
-        src/widgets/Button.cpp
-        src/widgets/Carriage.cpp
-        src/widgets/HorizontalLayout.cpp
-        src/widgets/ImageBox.cpp
-        src/widgets/ImageButton.cpp
-        src/widgets/Layout.cpp
-        src/widgets/MenuBar.cpp
-        src/widgets/NumericInputField.cpp
-        src/widgets/TextBox.cpp
-        src/widgets/TextInputField.cpp
-        src/widgets/ScrollBox.cpp
-        src/widgets/VerticalScrollBox.cpp
-        src/widgets/WidgetBox.cpp
-        src/widgets/VerticalLayout.cpp
-        src/widgets/graphic/Form.cpp
-        src/widgets/graphic/PickableForm.cpp
+        src/guiObjects/Widget.cpp
+        src/guiObjects/WidgetBuilder.cpp
+        src/guiObjects/WidgetFactory.cpp
+        src/guiObjects/Gui.cpp
+        src/guiObjects/Button.cpp
+        src/guiObjects/Carriage.cpp
+        src/guiObjects/HorizontalLayout.cpp
+        src/guiObjects/ImageBox.cpp
+        src/guiObjects/ImageButton.cpp
+        src/guiObjects/Layout.cpp
+        src/guiObjects/MenuBar.cpp
+        src/guiObjects/NumericInputField.cpp
+        src/guiObjects/TextBox.cpp
+        src/guiObjects/TextInputField.cpp
+        src/guiObjects/ScrollBox.cpp
+        src/guiObjects/VerticalScrollBox.cpp
+        src/guiObjects/WidgetBox.cpp
+        src/guiObjects/VerticalLayout.cpp
+        src/guiObjects/graphic/Form.cpp
+        src/guiObjects/graphic/PickableForm.cpp
         src/controllers/GuiController.cpp
         src/controllers/ButtonController.cpp
         src/controllers/CommonController.cpp

@@ -6,7 +6,7 @@
 #define GRAPHICLIB_SCROLLBOXCONTROLLER_HPP
 
 #include "WidgetController.hpp"
-#include "GraphicLib/Widgets/ScrollBox.hpp"
+#include "GraphicLib/GuiObjects/ScrollBox.hpp"
 
 namespace GraphicLib::Controllers {
     class ScrollBoxController : public WidgetController {
@@ -27,12 +27,12 @@ namespace GraphicLib::Controllers {
 
         void clear() override {}
 
-        void addWidget(Widgets::Widget::Ptr widget) override;
-        void removeWidget(const Widgets::Widget::Ptr& widget) override;
+        void addWidget(GuiObjects::Widget::Ptr widget) override;
+        void removeWidget(const GuiObjects::Widget::Ptr& widget) override;
 
     private:
-        std::vector<Widgets::ScrollBox::Ptr> _scrollBoxes;
-        Widgets::ScrollBox::Ptr scrollTarget;
+        std::vector<GuiObjects::ScrollBox::Ptr> _scrollBoxes;
+        GuiObjects::ScrollBox::Ptr scrollTarget;
     };
 }
 

@@ -27,11 +27,7 @@ namespace GraphicLib::Controllers {
 
     void ScrollBoxController::processMouseScroll(double xOffset, double yOffset) {
         if (scrollTarget != nullptr) {
-            if (yOffset > 0) {
-                scrollTarget->scrollBack();
-            } else {
-                scrollTarget->scrollForward();
-            }
+            scrollTarget->scroll(xOffset, yOffset);
         }
     }
 
@@ -39,11 +35,11 @@ namespace GraphicLib::Controllers {
 
     void ScrollBoxController::processDrop(GLFWwindow* window, int count, const char** paths) {}
 
-    void ScrollBoxController::addWidget(Widgets::Widget::Ptr widget) {
-        _scrollBoxes.push_back(std::dynamic_pointer_cast<Widgets::ScrollBox>(widget));
+    void ScrollBoxController::addWidget(GuiObjects::Widget::Ptr widget) {
+        _scrollBoxes.push_back(std::dynamic_pointer_cast<GuiObjects::ScrollBox>(widget));
     }
 
-    void ScrollBoxController::removeWidget(const Widgets::Widget::Ptr& widget) {
-        _scrollBoxes.push_back(std::dynamic_pointer_cast<Widgets::ScrollBox>(widget));
+    void ScrollBoxController::removeWidget(const GuiObjects::Widget::Ptr& widget) {
+        _scrollBoxes.push_back(std::dynamic_pointer_cast<GuiObjects::ScrollBox>(widget));
     }
 }    //namespace GraphicLib::Controllers

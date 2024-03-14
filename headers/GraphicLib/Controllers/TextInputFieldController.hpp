@@ -8,7 +8,7 @@
 #include <chrono>
 #include <thread>
 
-#include "GraphicLib/Widgets/TextInputField.hpp"
+#include "GraphicLib/GuiObjects/TextInputField.hpp"
 #include "WidgetController.hpp"
 
 namespace GraphicLib::Controllers {
@@ -28,12 +28,12 @@ namespace GraphicLib::Controllers {
 
         void processCharMods(GLFWwindow* window, unsigned int codepoint, int mods) override;
 
-        void addWidget(Widgets::Widget::Ptr widget) override;
+        void addWidget(GuiObjects::Widget::Ptr widget) override;
         void processDrop(GLFWwindow* window, int count, const char** paths) override;
-        void removeWidget(const Widgets::Widget::Ptr& widget) override;
+        void removeWidget(const GuiObjects::Widget::Ptr& widget) override;
 
     private:
-        std::vector<Widgets::TextInputField::Ptr> _buttons;
+        std::vector<GuiObjects::TextInputField::Ptr> _buttons;
     };
 }    //namespace Controllers
 

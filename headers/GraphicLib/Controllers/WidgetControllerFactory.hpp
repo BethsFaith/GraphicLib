@@ -5,7 +5,7 @@
 #ifndef ROLLANDPLAY_WIDGETCONTROLLERFACTORY_HPP
 #define ROLLANDPLAY_WIDGETCONTROLLERFACTORY_HPP
 
-#include "GraphicLib/Widgets/WidgetType.hpp"
+#include "GraphicLib/GuiObjects/WidgetType.hpp"
 #include "ButtonController.hpp"
 #include "ImageButtonController.hpp"
 #include "MenuBarController.hpp"
@@ -15,7 +15,7 @@
 namespace GraphicLib::Controllers {
     class WidgetControllerFactory {
     public:
-        static WidgetController::Ptr create(Widgets::WidgetType type);
+        static WidgetController::Ptr create(GuiObjects::WidgetType type);
 
     private:
         WidgetControllerFactory() = default;

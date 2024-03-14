@@ -5,18 +5,18 @@
 #include "GraphicLib/Controllers/WidgetControllerFactory.hpp"
 
 namespace GraphicLib::Controllers {
-    WidgetController::Ptr WidgetControllerFactory::create(Widgets::WidgetType type) {
+    WidgetController::Ptr WidgetControllerFactory::create(GuiObjects::WidgetType type) {
         switch (type) {
-            case Widgets::BUTTON:
+            case GuiObjects::BUTTON:
                 return std::make_shared<Controllers::ButtonController>();
-            case Widgets::NUM_INPUT_FIELD:
-            case Widgets::TEXT_INPUT_FIELD:
+            case GuiObjects::NUM_INPUT_FIELD:
+            case GuiObjects::TEXT_INPUT_FIELD:
                 return std::make_shared<Controllers::TextInputFieldController>();
-            case Widgets::IMAGE_BUTTON:
+            case GuiObjects::IMAGE_BUTTON:
                 return std::make_shared<Controllers::ImageButtonController>();
-            case Widgets::MENU_BAR:
+            case GuiObjects::MENU_BAR:
                 return std::make_shared<Controllers::MenuBarController>();
-            case Widgets::SCROLL_BOX:
+            case GuiObjects::SCROLL_BOX:
                 return std::make_shared<Controllers::ScrollBoxController>();
             default:
                 return nullptr;

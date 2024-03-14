@@ -7,7 +7,7 @@
 
 #include <memory>
 
-#include "GraphicLib/Widgets/Button.hpp"
+#include "GraphicLib/GuiObjects/Button.hpp"
 #include "WidgetController.hpp"
 
 namespace GraphicLib::Controllers {
@@ -29,11 +29,11 @@ namespace GraphicLib::Controllers {
         void processDrop(GLFWwindow* window, int count, const char** paths) override;
 
         void clear() override;
-        void addWidget(Widgets::Widget::Ptr widget) override;
-        void removeWidget(const Widgets::Widget::Ptr& widget) override;
+        void addWidget(GuiObjects::Widget::Ptr widget) override;
+        void removeWidget(const GuiObjects::Widget::Ptr& widget) override;
 
     private:
-        std::vector<Widgets::Button::Ptr> _buttons;
+        std::vector<GuiObjects::Button::Ptr> _buttons;
     };
 }    //namespace Controllers
 

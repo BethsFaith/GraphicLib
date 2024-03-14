@@ -5,7 +5,7 @@
 #ifndef ROLLANDPLAY_IMAGEBUTTONCONTROLLER_HPP
 #define ROLLANDPLAY_IMAGEBUTTONCONTROLLER_HPP
 
-#include "GraphicLib/Widgets/ImageButton.hpp"
+#include "GraphicLib/GuiObjects/ImageButton.hpp"
 #include "WidgetController.hpp"
 
 namespace GraphicLib::Controllers {
@@ -13,7 +13,7 @@ namespace GraphicLib::Controllers {
     public:
         ~ImageButtonController() override = default;
 
-        void addWidget(Widgets::Widget::Ptr widget) override;
+        void addWidget(GuiObjects::Widget::Ptr widget) override;
 
         void processKeyboardInput(GLFWwindow* window) override;
 
@@ -27,10 +27,10 @@ namespace GraphicLib::Controllers {
 
         void clear() override;
         void processDrop(GLFWwindow* window, int count, const char** paths) override;
-        void removeWidget(const Widgets::Widget::Ptr& widget) override;
+        void removeWidget(const GuiObjects::Widget::Ptr& widget) override;
 
     private:
-        std::vector<Widgets::ImageButton::Ptr> _buttons;
+        std::vector<GuiObjects::ImageButton::Ptr> _buttons;
     };
 }    //namespace Controllers
 

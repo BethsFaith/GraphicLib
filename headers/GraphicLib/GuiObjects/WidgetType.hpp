@@ -1,0 +1,21 @@
+//
+// Created by VerOchka on 26.10.2023.
+//
+
+#ifndef ROLLANDPLAY_WIDGETTYPE_HPP
+#define ROLLANDPLAY_WIDGETTYPE_HPP
+
+namespace GraphicLib::GuiObjects {
+    enum WidgetType {
+        TEXT_INPUT_FIELD,
+        NUM_INPUT_FIELD,
+        IMAGE_BUTTON,
+        TEXT_BOX,
+        IMAGE_BOX,
+        MENU_BAR,
+        BUTTON,
+        SCROLL_BOX,
+    };
+}    //namespace Forms
+
+#endif    //ROLLANDPLAY_WIDGETTYPE_HPP

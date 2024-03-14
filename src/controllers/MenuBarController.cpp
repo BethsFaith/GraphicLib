@@ -72,18 +72,18 @@ namespace GraphicLib::Controllers {
         _widgets.clear();
     }
 
-    void MenuBarController::addWidget(Widgets::Widget::Ptr widget) {
-        if (widget->getType() != Widgets::MENU_BAR) {
+    void MenuBarController::addWidget(GuiObjects::Widget::Ptr widget) {
+        if (widget->getType() != GuiObjects::MENU_BAR) {
             return ;
         }
 
-        auto menuBar = std::dynamic_pointer_cast<Widgets::MenuBar>(widget);
+        auto menuBar = std::dynamic_pointer_cast<GuiObjects::MenuBar>(widget);
         if (menuBar != nullptr) {
             _widgets.push_back(menuBar);
         }
     }
 
-    void MenuBarController::removeWidget(const Widgets::Widget::Ptr& widget) {
+    void MenuBarController::removeWidget(const GuiObjects::Widget::Ptr& widget) {
         auto it = std::remove(_widgets.begin(), _widgets.end(), widget);
         _widgets.erase(it, _widgets.end());
     }

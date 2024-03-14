@@ -7,7 +7,7 @@
 
 #include <map>
 
-#include "GraphicLib/Widgets/MenuBar.hpp"
+#include "GraphicLib/GuiObjects/MenuBar.hpp"
 
 #include "WidgetController.hpp"
 #include "ButtonController.hpp"
@@ -25,12 +25,12 @@ namespace GraphicLib::Controllers {
         void processCharMods(GLFWwindow* window, unsigned int codepoint, int mods) override;
         void processDrop(GLFWwindow* window, int count, const char** paths) override;
 
-        void addWidget(Widgets::Widget::Ptr widget) override;
-        void removeWidget(const Widgets::Widget::Ptr& widget) override;
+        void addWidget(GuiObjects::Widget::Ptr widget) override;
+        void removeWidget(const GuiObjects::Widget::Ptr& widget) override;
         void clear() override;
 
     private:
-        std::vector<Widgets::MenuBar::Ptr> _widgets;
+        std::vector<GuiObjects::MenuBar::Ptr> _widgets;
     };
 }
 #endif    //ROLLANDPLAY_MENUBARCONTROLLER_HPP

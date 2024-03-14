@@ -50,11 +50,11 @@ namespace GraphicLib::Controllers {
 
     void ButtonController::processDrop(GLFWwindow* window, int count, const char** paths) {}
 
-    void ButtonController::addWidget(Widgets::Widget::Ptr widget) {
-        _buttons.push_back(std::dynamic_pointer_cast<Widgets::Button>(widget));
+    void ButtonController::addWidget(GuiObjects::Widget::Ptr widget) {
+        _buttons.push_back(std::dynamic_pointer_cast<GuiObjects::Button>(widget));
     }
 
-    void ButtonController::removeWidget(const Widgets::Widget::Ptr& widget) {
+    void ButtonController::removeWidget(const GuiObjects::Widget::Ptr& widget) {
         auto end = std::remove(_buttons.begin(), _buttons.end(), widget);
         _buttons.erase(end, _buttons.end());
     }

@@ -5,7 +5,7 @@
 #ifndef ROLLANDPLAY_WIDGETCONTROLLER_HPP
 #define ROLLANDPLAY_WIDGETCONTROLLER_HPP
 
-#include "GraphicLib/Widgets/Button.hpp"
+#include "GraphicLib/GuiObjects/Button.hpp"
 #include "GLController.hpp"
 
 namespace GraphicLib::Controllers {
@@ -14,7 +14,7 @@ namespace GraphicLib::Controllers {
         struct Target {
             using Ptr = std::shared_ptr<Target>;
 
-            std::weak_ptr<Widgets::Button> widget;
+            std::weak_ptr<GuiObjects::Button> widget;
             Controllers::WidgetController* owner;
         };
 
@@ -22,8 +22,8 @@ namespace GraphicLib::Controllers {
 
         ~WidgetController() override = default;
 
-        virtual void addWidget(Widgets::Widget::Ptr widget) = 0;
-        virtual void removeWidget(const Widgets::Widget::Ptr& widget) = 0;
+        virtual void addWidget(GuiObjects::Widget::Ptr widget) = 0;
+        virtual void removeWidget(const GuiObjects::Widget::Ptr& widget) = 0;
 
         Target::Ptr target;
     };

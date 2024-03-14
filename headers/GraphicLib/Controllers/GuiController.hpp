@@ -8,7 +8,7 @@
 #include <vector>
 
 #include "GraphicLib/Objects/PickableTexture.hpp"
-#include "GraphicLib/Widgets/WidgetBox.hpp"
+#include "GraphicLib/GuiObjects/WidgetBox.hpp"
 #include "GLController.hpp"
 #include "WidgetController.hpp"
 #include "WidgetControllerFactory.hpp"
@@ -34,11 +34,11 @@ namespace GraphicLib::Controllers {
         void clear() override;
 
         void processCharMods(GLFWwindow* window, unsigned int codepoint, int mods) override;
-        void addWidget(const Widgets::Widget::Ptr& widget);
-        void removeWidget(const Widgets::Widget::Ptr& widget);
+        void addWidget(const GuiObjects::Widget::Ptr& widget);
+        void removeWidget(const GuiObjects::Widget::Ptr& widget);
 
     private:
-        std::map<Widgets::WidgetType, WidgetController::Ptr> _widgetsControllers;
+        std::map<GuiObjects::WidgetType, WidgetController::Ptr> _widgetsControllers;
 
         WidgetController::Target::Ptr target;
     };
