@@ -157,10 +157,6 @@ namespace GraphicLib::Widgets {
         _selectedItemColor = color;
     }
 
-    void MenuBar::setSelectedItemColor(const Styles::Color& color) {
-        _selectedItemColor = Styles::getRGB(color);
-    }
-
     glm::vec2 MenuBar::getScale() {
         return _scale;
     }

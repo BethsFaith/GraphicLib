@@ -66,7 +66,7 @@ namespace GraphicLib::Widgets {
     }
 
     void ImageBox::setLabelParams(const Styles::TextParams& text) {
-        _form.setTextColor(getRGB(text.color));
+        _form.setTextColor(text.color);
         _form.setTextPosition(text.position);
         _form.setTextSize(text.size);
     }
@@ -79,8 +79,8 @@ namespace GraphicLib::Widgets {
         _form.setTextPosition(position);
     }
 
-    void ImageBox::setLabelColor(Styles::Color color) {
-        _form.setTextColor(getRGB(color));
+    void ImageBox::setLabelColor(glm::vec3 color) {
+        _form.setTextColor(color);
     }
 
     void ImageBox::setLabelTextSize(float size) {

@@ -37,7 +37,6 @@ namespace GraphicLib::Widgets {
         void clear();
 
         void setSelectedItemColor(const glm::vec3& color);
-        void setSelectedItemColor(const Styles::Color& color);
 
         [[nodiscard]] const std::vector<Button::Ptr>& getElements() const;
         [[nodiscard]] const glm::vec3& getSelectedItemColor() const;

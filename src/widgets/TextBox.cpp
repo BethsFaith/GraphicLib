@@ -34,17 +34,17 @@ namespace GraphicLib::Widgets {
         _form->setTextPosition({position.x - _form->getScale().x / 2.0f + 0.01f, position.y});
     }
 
-    void TextBox::setColor(Styles::Color color) {
-        _form->setColor(getRGB(color));
+    void TextBox::setColor(glm::vec3 color) {
+        _form->setColor(color);
     }
 
     void TextBox::setTextParams(const Styles::TextParams& text) {
-        _form->setTextColor(getRGB(text.color));
+        _form->setTextColor(text.color);
         _form->setTextSize(text.size);
     }
 
-    void TextBox::setTextColor(Styles::Color color) {
-        _form->setTextColor(getRGB(color));
+    void TextBox::setTextColor(glm::vec3 color) {
+        _form->setTextColor(color);
     }
 
     void TextBox::setText(const std::u16string& content) {

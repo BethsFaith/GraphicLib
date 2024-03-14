@@ -11,7 +11,6 @@
 
 #include "Widget.hpp"
 #include "graphic/PickableForm.hpp"
-#include "styles/Color.hpp"
 #include "styles/TextParams.hpp"
 
 namespace GraphicLib::Widgets {
@@ -50,14 +49,12 @@ namespace GraphicLib::Widgets {
         virtual void setLabelParams(const Styles::TextParams& text);
         virtual void setLabelText(const std::u16string& text);
         virtual void setLabelPosition(glm::vec2 position);
-        virtual void setLabelColor(Styles::Color color);
+        virtual void setLabelColor(glm::vec3 color);
         virtual void setLabelTextSize(float size);
 
-        virtual void setColor(Styles::Color color);
-        virtual void setTraceColor(Styles::Color traceColor);
         virtual void setColor(glm::vec3 color);
-
         virtual void setTraceColor(glm::vec3 traceColor);
+
         std::u16string getTextLabelContent();
         glm::vec2 getTextLabelPosition();
 

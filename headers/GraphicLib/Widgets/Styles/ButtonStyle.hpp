@@ -21,9 +21,9 @@ namespace GraphicLib::Widgets::Styles {
 
         TextParams labelParams;
 
-        Color color{};
-        Color traceColor{};
-        Color pressColor{};
+        glm::vec3 color{};
+        glm::vec3 traceColor{};
+        glm::vec3 pressColor{};
     };
 }    //namespace widgets
 

@@ -11,8 +11,6 @@
 #include "GraphicLib/Objects/Techniques/TransformTechnique.hpp"
 #include "GraphicLib/Objects/TextRender.hpp"
 
-#include "styles/Color.hpp"
-
 namespace GraphicLib::Widgets {
     class Carriage {
     public:
@@ -23,7 +21,7 @@ namespace GraphicLib::Widgets {
 
         Carriage();
 
-        void init(Styles::Color color, const glm::vec2& scale, const glm::vec2& position, float textSize);
+        void init(glm::vec3 color, const glm::vec2& scale, const glm::vec2& position, float textSize);
 
         void render(const Shaders::ShaderProgram::Ptr& shader);
 
