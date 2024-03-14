@@ -47,9 +47,9 @@ namespace GraphicLib::GuiObjects {
 
         layout->setTransform({position.x, position.y});
 
-        for (const auto& widget : layout->getWidgets()) {
-            Layout::putWidget(widget);
-        }
+        position.x += widgetScale.x + widgetOffset;
+
+        objects.push_back(layout);
     }
 
     void HorizontalLayout::clear() {
