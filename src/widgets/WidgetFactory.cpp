@@ -107,6 +107,9 @@ namespace GraphicLib::Widgets {
 
                 break;
             }
+            case SCROLL_BOX: {
+               result = std::make_shared<VerticalScrollBox>();
+            }
             default:
                 break;
         }

@@ -16,6 +16,8 @@ namespace GraphicLib::Controllers {
                 return std::make_shared<Controllers::ImageButtonController>();
             case Widgets::MENU_BAR:
                 return std::make_shared<Controllers::MenuBarController>();
+            case Widgets::SCROLL_BOX:
+                return std::make_shared<Controllers::ScrollBoxController>();
             default:
                 return nullptr;
         }

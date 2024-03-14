@@ -13,6 +13,7 @@
 #include "TextInputField.hpp"
 #include "NumericInputField.hpp"
 #include "ImageBox.hpp"
+#include "VerticalScrollBox.hpp"
 #include "WidgetType.hpp"
 #include "styles/ButtonStyle.hpp"
 #include "styles/WidgetStyle.hpp"

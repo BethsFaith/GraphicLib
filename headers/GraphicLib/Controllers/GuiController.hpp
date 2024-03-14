@@ -8,6 +8,7 @@
 #include <vector>
 
 #include "GraphicLib/Objects/PickableTexture.hpp"
+#include "GraphicLib/Widgets/WidgetBox.hpp"
 #include "GLController.hpp"
 #include "WidgetController.hpp"
 #include "WidgetControllerFactory.hpp"

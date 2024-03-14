@@ -14,6 +14,7 @@ namespace GraphicLib::Widgets {
         IMAGE_BOX,
         MENU_BAR,
         BUTTON,
+        SCROLL_BOX,
     };
 }    //namespace Forms
 

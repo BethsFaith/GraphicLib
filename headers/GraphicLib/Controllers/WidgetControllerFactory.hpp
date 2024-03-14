@@ -10,6 +10,7 @@
 #include "ImageButtonController.hpp"
 #include "MenuBarController.hpp"
 #include "TextInputFieldController.hpp"
+#include "ScrollBoxController.hpp"
 
 namespace GraphicLib::Controllers {
     class WidgetControllerFactory {

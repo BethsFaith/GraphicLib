@@ -65,7 +65,7 @@ add_library(GraphicLib
         src/controllers/MenuBarController.cpp
         src/controllers/TextInputFieldController.cpp
         src/controllers/WidgetControllerFactory.cpp
-        )
+        headers/GraphicLib/Widgets/ScrollBox.hpp headers/GraphicLib/Widgets/VerticalScrollBox.hpp src/widgets/ScrollBox.cpp src/widgets/VerticalScrollBox.cpp headers/GraphicLib/Controllers/ScrollBoxController.hpp src/controllers/ScrollBoxController.cpp headers/GraphicLib/Widgets/WidgetBox.hpp)
 
 target_link_libraries(GraphicLib ${CONAN_LIBS})
 target_include_directories(GraphicLib PUBLIC headers)

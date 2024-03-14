@@ -64,6 +64,13 @@ namespace GraphicLib::Controllers {
             _widgetsControllers[type] = controller;
         }
         _widgetsControllers[type]->addWidget(widget);
+
+        if (type == Widgets::SCROLL_BOX) {
+            auto widgetBox = std::dynamic_pointer_cast<Widgets::WidgetBox>(widget);
+            for (const auto& subWidget : widgetBox->getWidgets()) {
+                addWidget(subWidget);
+            }
+        }
     }
 
     void GuiController::removeWidget(const Widgets::Widget::Ptr& widget) {
