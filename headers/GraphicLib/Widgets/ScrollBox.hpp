@@ -32,20 +32,20 @@ namespace GraphicLib::Widgets {
         bool checkSelecting(unsigned int x, unsigned int y) override;
         void setTransform(glm::vec2 position, glm::vec2 scale) override;
         void setTransform(glm::vec2 position) override;
-
         void setScale(glm::vec2 scale) override;
+        void setCanvas(const Objects::PickableTexture::Ptr& pickableTexture) override;
+
         glm::vec2 getScale() override;
 
         glm::vec2 getPosition() override;
-
         void setStartBorder(float startBorder);
         void setEndBorder(float endBorder);
-        void setSpeed(float speed);
 
+        void setSpeed(float speed);
         [[nodiscard]] float getStartBorder() const;
         [[nodiscard]] float getEndBorder() const;
-        [[nodiscard]] float getSpeed() const;
 
+        [[nodiscard]] float getSpeed() const;
         std::vector<Widget::Ptr> getWidgets() override;
 
     protected:

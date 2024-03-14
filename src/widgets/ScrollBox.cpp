@@ -84,4 +84,10 @@ namespace GraphicLib::Widgets {
     std::vector<Widget::Ptr> ScrollBox::getWidgets() {
         return _layout->getWidgets();
     }
+
+    void ScrollBox::setCanvas(const Objects::PickableTexture::Ptr& pickableTexture) {
+        for (const auto& widget : _layout->getWidgets()) {
+            widget->setCanvas(pickableTexture);
+        }
+    }
 }
