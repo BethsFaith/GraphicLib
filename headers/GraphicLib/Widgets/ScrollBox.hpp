@@ -22,6 +22,7 @@ namespace GraphicLib::Widgets {
         virtual bool scrollBack() = 0;
 
         virtual void putWidget(const Widget::Ptr& widget);
+        virtual void putLayout(const Layout::Ptr& layout);
 
         void draw(Shaders::ShaderProgram::Ptr colorShader,
                   Shaders::ShaderProgram::Ptr textureShader,
@@ -44,6 +45,7 @@ namespace GraphicLib::Widgets {
         [[nodiscard]] float getStartBorder() const;
         [[nodiscard]] float getEndBorder() const;
         [[nodiscard]] float getSpeed() const;
+
         std::vector<Widget::Ptr> getWidgets() override;
 
     protected:

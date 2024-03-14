@@ -49,6 +49,10 @@ namespace GraphicLib::Widgets {
         _layout->putWidget(widget);
     }
 
+    void ScrollBox::putLayout(const Layout::Ptr& layout) {
+        _layout->putLayout(layout);
+    }
+
     void ScrollBox::setStartBorder(float startBorder) {
         _startBorder = startBorder;
     }
