@@ -7,8 +7,6 @@
 
 #include <iostream>
 
-#include "Color.hpp"
-
 namespace GraphicLib::Widgets::Styles {
     struct WidgetStyle {
         using Ptr = std::shared_ptr<WidgetStyle>;

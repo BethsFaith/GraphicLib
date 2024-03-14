@@ -18,9 +18,9 @@ namespace GraphicLib::Widgets {
         _object->setPrimitive(rectangle);
     }
 
-    void Carriage::init(Styles::Color color, const glm::vec2& scale, const glm::vec2& position, float textSize) {
+    void Carriage::init(glm::vec3 color, const glm::vec2& scale, const glm::vec2& position, float textSize) {
         auto colorTechnique = std::make_shared<Objects::Techniques::ColorTechnique>();
-        colorTechnique->setColor(getRGB(color));
+        colorTechnique->setColor(color);
         _object->addTechnique(Objects::Techniques::COLOR, colorTechnique);
 
         auto transformTechnique = std::make_shared<Objects::Techniques::TransformTechnique>();

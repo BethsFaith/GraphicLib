@@ -47,7 +47,7 @@ namespace GraphicLib::Widgets {
         _form.setTextPosition({position.x - scale.x / 2 + 0.01f, position.y + scale.y * 0.7});
     }
 
-    void ImageButton::setColor(Styles::Color color) {}
+    void ImageButton::setColor(glm::vec3 color) {}
 
     const Objects::Textures::Texture::Ptr& ImageButton::getTexture() const {
         return _texture;

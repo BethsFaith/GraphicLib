@@ -16,7 +16,7 @@ namespace GraphicLib::Widgets::Styles {
         TextBoxStyle() = default;
         ~TextBoxStyle() override = default;
 
-        Color color{};
+        glm::vec3 color{};
         TextParams textLabelParams;
     };
 }

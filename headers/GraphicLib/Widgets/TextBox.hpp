@@ -36,10 +36,10 @@ namespace GraphicLib::Widgets {
         void clear();
 
         void setTextParams(const Styles::TextParams& text);
-        void setTextColor(Styles::Color color);
+        void setTextColor(glm::vec3 color);
         void setTextSize(float size);
         void setText(const std::u16string& content);
-        void setColor(Styles::Color color);
+        void setColor(glm::vec3 color);
 
     private:
         std::unique_ptr<Graphic::Form> _form;

@@ -7,11 +7,9 @@
 
 #include <iostream>
 
-#include "Color.hpp"
-
 namespace GraphicLib::Widgets::Styles {
     struct TextParams {
-        Color color = Color::WHITE;
+        glm::vec3 color = {0.0f, 0.0f, 0.0f};
 
         float size;
         glm::vec2 position;

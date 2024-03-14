@@ -10,7 +10,6 @@
 
 #include "Widget.hpp"
 #include "graphic/Form.hpp"
-#include "styles/Color.hpp"
 #include "styles/TextParams.hpp"
 
 namespace GraphicLib::Widgets {
@@ -34,7 +33,7 @@ namespace GraphicLib::Widgets {
         void setLabelParams(const Styles::TextParams& text);
         void setLabelText(const std::u16string& text);
         void setLabelPosition(glm::vec2 position);
-        void setLabelColor(Styles::Color color);
+        void setLabelColor(glm::vec3 color);
         void setLabelTextSize(float size);
 
         glm::vec2 getScale() override;

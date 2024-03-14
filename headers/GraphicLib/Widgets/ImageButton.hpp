@@ -22,7 +22,7 @@ namespace GraphicLib::Widgets {
                   Shaders::ShaderProgram::Ptr textShader,
                   Shaders::ShaderProgram::Ptr pickShader) override;
 
-        void setColor(Styles::Color color) override;
+        void setColor(glm::vec3 color) override;
         void setImage(const std::string& texturePath, int textureIndex);
         void setDefaultImage(const std::string& texturePath, int textureIndex);
 

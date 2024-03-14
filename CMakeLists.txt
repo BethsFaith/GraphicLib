@@ -58,7 +58,6 @@ add_library(GraphicLib
         src/widgets/VerticalLayout.cpp
         src/widgets/graphic/Form.cpp
         src/widgets/graphic/PickableForm.cpp
-        src/widgets/styles/Color.cpp
         src/controllers/GuiController.cpp
         src/controllers/ButtonController.cpp
         src/controllers/CommonController.cpp

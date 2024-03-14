@@ -19,7 +19,7 @@ namespace GraphicLib::Widgets {
 
         id = IdCounter;
 
-        _tracing.setColor(getRGB(Styles::Color::WHITE));
+        _tracing.setColor({1.0f, 1.0f, 1.0f});
     }
 
     void Button::draw(Shaders::ShaderProgram::Ptr colorShader,
@@ -143,13 +143,13 @@ namespace GraphicLib::Widgets {
     }
 
     void Button::setLabelParams(const Styles::TextParams& text) {
-        _form.setTextColor(getRGB(text.color));
+        _form.setTextColor(text.color);
         _form.setTextPosition(text.position);
         _form.setTextSize(text.size);
     }
 
-    void Button::setLabelColor(Styles::Color color) {
-        _form.setTextColor(getRGB(color));
+    void Button::setLabelColor(glm::vec3 color) {
+        _form.setTextColor(color);
     }
 
     void Button::setLabelText(const std::u16string& text) {
@@ -160,16 +160,8 @@ namespace GraphicLib::Widgets {
         _form.setTextSize(size);
     }
 
-    void Button::setColor(Styles::Color color) {
-        _form.setColor(getRGB(color));
-    }
-
     void Button::setColor(glm::vec3 color) {
         _form.setColor(color);
-    }
-
-    void Button::setTraceColor(Styles::Color traceColor) {
-        _tracing.setColor(getRGB(traceColor));
     }
 
     void Button::setTraceColor(glm::vec3 traceColor) {
