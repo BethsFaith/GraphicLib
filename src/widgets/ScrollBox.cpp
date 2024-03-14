@@ -5,7 +5,7 @@
 #include "GraphicLib/Widgets/ScrollBox.hpp"
 
 namespace GraphicLib::Widgets {
-    Widgets::ScrollBox::ScrollBox(Layout::Ptr  layout) : Widget(SCROLL_BOX), _layout(std::move(layout)) {}
+    Widgets::ScrollBox::ScrollBox(Layout::Ptr  layout) : WidgetBox(SCROLL_BOX), _layout(std::move(layout)) {}
 
     bool ScrollBox::checkSelecting(unsigned int x, unsigned int y) {
         auto widgets = _layout->getWidgets();

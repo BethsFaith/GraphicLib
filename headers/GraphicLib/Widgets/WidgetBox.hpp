@@ -10,6 +10,8 @@
 namespace GraphicLib::Widgets {
     class WidgetBox : public Widget {
     public:
+        explicit WidgetBox(WidgetType type);
+
         virtual std::vector<Widget::Ptr> getWidgets() = 0;
     };
 }

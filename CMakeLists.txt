@@ -55,6 +55,9 @@ add_library(GraphicLib
         src/widgets/NumericInputField.cpp
         src/widgets/TextBox.cpp
         src/widgets/TextInputField.cpp
+        src/widgets/ScrollBox.cpp
+        src/widgets/VerticalScrollBox.cpp
+        src/widgets/WidgetBox.cpp
         src/widgets/VerticalLayout.cpp
         src/widgets/graphic/Form.cpp
         src/widgets/graphic/PickableForm.cpp
@@ -64,8 +67,9 @@ add_library(GraphicLib
         src/controllers/ImageButtonController.cpp
         src/controllers/MenuBarController.cpp
         src/controllers/TextInputFieldController.cpp
+        src/controllers/ScrollBoxController.cpp
         src/controllers/WidgetControllerFactory.cpp
-        headers/GraphicLib/Widgets/ScrollBox.hpp headers/GraphicLib/Widgets/VerticalScrollBox.hpp src/widgets/ScrollBox.cpp src/widgets/VerticalScrollBox.cpp headers/GraphicLib/Controllers/ScrollBoxController.hpp src/controllers/ScrollBoxController.cpp headers/GraphicLib/Widgets/WidgetBox.hpp)
+        )
 
 target_link_libraries(GraphicLib ${CONAN_LIBS})
 target_include_directories(GraphicLib PUBLIC headers)
