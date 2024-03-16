@@ -168,4 +168,8 @@ namespace GraphicLib::GuiObjects {
     const glm::vec3& MenuBar::getSelectedItemColor() const {
         return _selectedItemColor;
     }
+
+    glm::vec2 MenuBar::getUniformPosition() {
+        return getPosition();
+    }
 }    //namespace Widgets

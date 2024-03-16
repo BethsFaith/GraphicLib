@@ -9,81 +9,30 @@
 namespace GraphicLib::GuiObjects {
     VerticalLayout::VerticalLayout() : Layout(VERTICAL) {}
 
-    void VerticalLayout::putWidget(const Widget::Ptr& widget) {
+    void VerticalLayout::beforePuttingGuiObject(GuiObject::Ptr guiObject) {
         glm::vec2 widgetScale;
 
         if (elemScale.x == 0.0f && elemScale.y == 0.0f) {
-            widgetScale = widget->getScale();
+            widgetScale = guiObject->getScale();
         } else {
             widgetScale = elemScale;
-            widget->setScale(elemScale);
+            guiObject->setScale(elemScale);
         }
-
-        //        if (objects.empty()) {
-        //            position.y -= widgetScale.y/2;
-        //        }
 
         scale.y += widgetScale.y;
         if (scale.x < widgetScale.x) {
             scale.x = widgetScale.x;
         }
 
-        widget->setTransform({position.x, position.y});
+        guiObject->setTransform({position.x, position.y});
 
         position.y -= widgetOffset + widgetScale.y;
-
-        objects.push_back(widget);
     }
 
-    void VerticalLayout::putLayout(Layout::Ptr layout) {
-        glm::vec2 layoutScale;
+    void VerticalLayout::beforeDeletingGuiObject(GuiObject::Ptr guiObject) {
+        auto widgetScale = guiObject->getScale();;
 
-        if (elemScale.x == 0.0f && elemScale.y == 0.0f) {
-            layoutScale = layout->getScale();
-        } else {
-            layoutScale = elemScale;
-            layout->setScale(elemScale);
-        }
-
-        //        if (objects.empty()) {
-        //            position.y -= layoutScale.y/2;
-        //        }
-
-        scale.y += layoutScale.y;
-        if (scale.x < layoutScale.x) {
-            scale.x = layoutScale.x;
-        }
-
-        layout->setTransform({position.x, position.y});
-
-        position.y -= widgetOffset + layoutScale.y;
-
-        objects.push_back(layout);
-    }
-
-    void VerticalLayout::putWidgetBox(const WidgetBox::Ptr& widgetBox) {
-        glm::vec2 layoutScale;
-        if (elemScale.x == 0.0f && elemScale.y == 0.0f) {
-            layoutScale = widgetBox->getScale();
-        } else {
-            layoutScale = elemScale;
-            widgetBox->setScale(elemScale);
-        }
-
-        if (!objects.empty()) {
-            position.y -= layoutScale.y/2;
-        }
-
-        scale.y += layoutScale.y;
-        if (scale.x < layoutScale.x) {
-            scale.x = layoutScale.x;
-        }
-
-        widgetBox->setTransform({position.x + layoutScale.x/2, position.y - layoutScale.y/2});
-
-        position.y -= widgetOffset + layoutScale.y;
-
-        objects.push_back(widgetBox);
+        position.y += widgetOffset + widgetScale.y;
     }
 
     void VerticalLayout::clear() {

@@ -111,7 +111,7 @@ namespace GraphicLib::GuiObjects {
     }
 
     void Button::setTransform(glm::vec2 position) {
-        auto scale = getScale();
+        auto scale = _form.getScale();
 
         position = countUniformPosition(position, scale);
 
@@ -188,5 +188,9 @@ namespace GraphicLib::GuiObjects {
 
     glm::vec3 Button::getColor() {
         return _form.getColor();
+    }
+
+    glm::vec2 Button::getUniformPosition() {
+        return _form.getPosition();
     }
 }    //namespace Forms

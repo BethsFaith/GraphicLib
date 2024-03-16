@@ -25,7 +25,7 @@ namespace GraphicLib::GuiObjects {
     }
 
     void TextBox::setTransform(glm::vec2 position) {
-        position = countUniformPosition(position, getScale());
+        position = countUniformPosition(position, _form->getScale());
 
         _form->setTransform(position);
         _form->setTextPosition({position.x - _form->getScale().x / 2.0f + 0.01f, position.y});
@@ -81,5 +81,9 @@ namespace GraphicLib::GuiObjects {
 
     glm::vec2 TextBox::getPosition() {
         return countOriginalPosition(_form->getPosition(), _form->getScale());
+    }
+
+    glm::vec2 TextBox::getUniformPosition() {
+        return _form->getPosition();
     }
 }

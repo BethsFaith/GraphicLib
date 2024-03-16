@@ -8,26 +8,18 @@ namespace GraphicLib::GuiObjects {
     Layout::Layout(LayoutType type) : _type(type) {}
 
     void Layout::putGuiObject(GuiObject::Ptr guiObject) {
-        auto type = guiObject->getGuiType();
-        if (type == WIDGET) {
-            auto widget = std::dynamic_pointer_cast<Widget>(guiObject);
-            if (widget->getType() == SCROLL_BOX) {
-                putWidgetBox(std::dynamic_pointer_cast<WidgetBox>(widget));
-            } else {
-                putWidget(widget);
-            }
-        } else if (type == LAYOUT){
-            putLayout(std::dynamic_pointer_cast<Layout>(guiObject));
-        }
+        beforePuttingGuiObject(guiObject);
+
+        objects.push_back(guiObject);
     }
 
     void Layout::removeGuiObject(GuiObject::Ptr guiObject) {
-        auto pos = std::find(objects.begin(), objects.end(), guiObject);
-        if (pos != objects.end()) {
-            scale -= guiObject->getScale();
-
-            objects.erase(pos);
-        }
+//        auto it = std::find(objects.begin(), objects.end(), guiObject);
+//        while (it != objects.end()) {
+//            beforeDeletingGuiObject(guiObject);
+//            ++it;
+//        }
+//
     }
 
     void Layout::setWidgetOffset(float offset) {

@@ -32,7 +32,7 @@ namespace GraphicLib::GuiObjects {
     }
 
     void ImageBox::setTransform(glm::vec2 position) {
-        auto scale = getScale();
+        auto scale = _form.getScale();
 
         position = countUniformPosition(position, scale);
 
@@ -58,7 +58,11 @@ namespace GraphicLib::GuiObjects {
     }
 
     glm::vec2 ImageBox::getScale() {
-        return _form.getScale();
+        auto scale = _form.getScale();
+        if (!_form.getText().empty()) {
+            scale.y *= 1.3;
+        }
+        return scale;
     }
 
     glm::vec2 ImageBox::getPosition() {
@@ -109,5 +113,9 @@ namespace GraphicLib::GuiObjects {
         }
 
         return pos;
+    }
+
+    glm::vec2 ImageBox::getUniformPosition() {
+        return _form.getPosition();
     }
 }    //namespace Widgets

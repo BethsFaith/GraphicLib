@@ -55,10 +55,8 @@ namespace GraphicLib::GuiObjects {
 
     glm::vec2 ImageButton::getScale() {
         auto scale = Button::getScale();
-        if (!getTextLabelContent().empty()) {
-            scale.y += 0.01f;
-        } else {
-            scale.y += 0.0;
+        if (!_form.getText().empty()) {
+            scale.y *= 1.3f;
         }
         return scale;
     }
@@ -73,7 +71,7 @@ namespace GraphicLib::GuiObjects {
         auto pos = Widget::countUniformPosition(position, scale);
 
         if (!_form.getText().empty()) {
-            pos.y = pos.y - scale.y * 0.4;
+            pos.y = pos.y - scale.y * 0.3;
         }
 
         return pos;
@@ -83,7 +81,7 @@ namespace GraphicLib::GuiObjects {
         auto pos = Widget::countOriginalPosition(position, scale);
 
         if (!_form.getText().empty()) {
-            pos.y = pos.y + scale.y * 0.4;
+            pos.y = pos.y + scale.y * 0.3;
         }
 
         return pos;

@@ -28,4 +28,8 @@ namespace GraphicLib::GuiObjects {
         _start = start.y;
         _end = end.y;
     }
+
+    glm::vec2 VerticalScrollBox::getUniformPosition() {
+        return glm::vec2();
+    }
 }    //namespace GraphicLib::GuiObjects
