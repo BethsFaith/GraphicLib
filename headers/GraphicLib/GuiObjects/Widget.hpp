@@ -30,6 +30,9 @@ namespace GraphicLib::GuiObjects {
         GuiObjectType getGuiType() const override;
 
     protected:
+        virtual glm::vec2 countUniformPosition(glm::vec2 position, glm::vec2 scale);
+        virtual glm::vec2 countOriginalPosition(glm::vec2 position, glm::vec2 scale);
+
         Objects::PickableTexture::Ptr canvas;
 
     private:

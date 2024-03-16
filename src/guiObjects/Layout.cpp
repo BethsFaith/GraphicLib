@@ -10,7 +10,12 @@ namespace GraphicLib::GuiObjects {
     void Layout::putGuiObject(GuiObject::Ptr guiObject) {
         auto type = guiObject->getGuiType();
         if (type == WIDGET) {
-            putWidget(std::dynamic_pointer_cast<Widget>(guiObject));
+            auto widget = std::dynamic_pointer_cast<Widget>(guiObject);
+            if (widget->getType() == SCROLL_BOX) {
+                putWidgetBox(std::dynamic_pointer_cast<WidgetBox>(widget));
+            } else {
+                putWidget(widget);
+            }
         } else if (type == LAYOUT){
             putLayout(std::dynamic_pointer_cast<Layout>(guiObject));
         }

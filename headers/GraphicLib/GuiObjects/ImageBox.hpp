@@ -43,6 +43,10 @@ namespace GraphicLib::GuiObjects {
 
         [[nodiscard]] const Objects::Textures::Texture::Ptr& getTexture() const;
 
+    protected:
+        glm::vec2 countUniformPosition(glm::vec2 position, glm::vec2 scale) override;
+        glm::vec2 countOriginalPosition(glm::vec2 position, glm::vec2 scale) override;
+
     private:
         Graphic::Form _form;
 

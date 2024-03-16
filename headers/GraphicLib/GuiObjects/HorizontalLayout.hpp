@@ -21,6 +21,9 @@ namespace GraphicLib::GuiObjects {
         void clear() override;
 
         glm::vec2 getScale() override;
+
+    protected:
+        void putWidgetBox(const WidgetBox::Ptr& widgetBox) override;
     };
 }    //namespace Widgets
 

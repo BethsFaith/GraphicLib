@@ -17,4 +17,18 @@ namespace GraphicLib::GuiObjects {
     GuiObjectType Widget::getGuiType() const {
         return WIDGET;
     }
+
+    glm::vec2 Widget::countUniformPosition(glm::vec2 position, glm::vec2 scale) {
+        position.x += scale.x/2;
+        position.y -= scale.y/2;
+
+        return position;
+    }
+
+    glm::vec2 Widget::countOriginalPosition(glm::vec2 position, glm::vec2 scale) {
+        position.x -= scale.x/2;
+        position.y += scale.y/2;
+
+        return position;
+    }
 }    //namespace Forms

@@ -6,6 +6,7 @@
 #define ROLLANDPLAY_LAYOUT_HPP
 
 #include "Widget.hpp"
+#include "WidgetBox.hpp"
 #include "LayoutType.hpp"
 
 namespace GraphicLib::GuiObjects {
@@ -37,6 +38,7 @@ namespace GraphicLib::GuiObjects {
     protected:
         virtual void putLayout(Layout::Ptr layout) = 0;
         virtual void putWidget(const Widget::Ptr& widget) = 0;
+        virtual void putWidgetBox(const WidgetBox::Ptr& widgetBox) = 0;
 
         float widgetOffset = 0.1f;
 

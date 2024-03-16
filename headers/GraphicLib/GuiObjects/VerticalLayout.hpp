@@ -18,6 +18,9 @@ namespace GraphicLib::GuiObjects {
         void putWidget(const Widget::Ptr& widget) override;
         void clear() override;
         void putLayout(Layout::Ptr layout) override;
+
+    protected:
+        void putWidgetBox(const WidgetBox::Ptr& widgetBox) override;
     };
 }
 #endif    //ROLLANDPLAY_VERTICALLAYOUT_HPP

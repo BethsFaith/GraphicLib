@@ -2,9 +2,9 @@
 // Created by BethsFaith on 14.03.2024.
 //
 
-#include <utility>
-
 #include "GraphicLib/GuiObjects/ScrollBox.hpp"
+
+#include <utility>
 
 namespace GraphicLib::GuiObjects {
     GuiObjects::ScrollBox::ScrollBox(Layout::Ptr layout) : WidgetBox(SCROLL_BOX), _layout(std::move(layout)) {}
@@ -14,7 +14,7 @@ namespace GraphicLib::GuiObjects {
     }
 
     bool ScrollBox::checkSelecting(unsigned int x, unsigned int y) {
-        auto res = x >= _xMinPos && x <= _xMaxPos && y >= _yMinPos && y <= _yMaxPos;
+        //        return y >= _yMinPos && y <= _yMaxPos;
 
         auto widgets = _layout->getWidgets();
 
@@ -27,11 +27,11 @@ namespace GraphicLib::GuiObjects {
                          Shaders::ShaderProgram::Ptr textureShader,
                          Shaders::ShaderProgram::Ptr textShader,
                          Shaders::ShaderProgram::Ptr pickShader) {
-        glScissor((int)_xMinPos, (int)_yMinPos, (int)_width, (int)_height);
+        glScissor(_xMinPos, _yMinPos, _width, _height);
         glEnable(GL_DEPTH_TEST);
         glEnable(GL_SCISSOR_TEST);
 
-        glClearColor(_backgroundColor.x,_backgroundColor.y, _backgroundColor.z, 1.0f);
+        glClearColor(_backgroundColor.x, _backgroundColor.y, _backgroundColor.z, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 
         auto widgets = _layout->getWidgets();
@@ -85,21 +85,20 @@ namespace GraphicLib::GuiObjects {
         }
     }
 
-    void ScrollBox::setBorders(const glm::vec2& start,
-                               const glm::vec2& end) {
-        auto w = (float)windowWidth/2;
-        auto h = (float)windowHeight/2;
+    void ScrollBox::setBorders(const glm::vec2& start, const glm::vec2& end) {
+        auto w = (float)windowWidth / 2;
+        auto h = (float)windowHeight / 2;
 
-        auto xMaxPos = int(w * (1+ end.x));
-        _xMinPos = int(w * (1+ start.x));
-        _width = xMaxPos - _xMinPos;
+        _xMaxPos = int(w * (1 + end.x));
+        _xMinPos = int(w * (1 + start.x));
+        _width = _xMaxPos - _xMinPos;
 
-        auto yMaxPos = (int)(h * (1+ end.y));
-        _yMinPos = int(h * (1+ start.y));
-        _height = yMaxPos - _yMinPos;
+        _yMaxPos = (int)(h * (1 + end.y));
+        _yMinPos = int(h * (1 + start.y));
+        _height = _yMaxPos - _yMinPos;
     }
 
     void ScrollBox::setBackgroundColor(const glm::vec3& backgroundColor) {
         _backgroundColor = backgroundColor;
     }
-}
+}    //namespace GraphicLib::GuiObjects

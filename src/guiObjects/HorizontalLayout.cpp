@@ -16,18 +16,21 @@ namespace GraphicLib::GuiObjects {
             widget->setScale(elemScale);
         }
 
-        if (objects.empty()) {
-            position.y -= widgetScale.y/2;
-        }
+        //
+        //        if (objects.empty()) {
+        //            position.x += widgetScale.x/2;
+        //        }
 
         scale.x += widgetScale.x;
         if (scale.y < widgetScale.y) {
             scale.y = widgetScale.y;
         }
 
-        widget->setTransform({position.x + widgetScale.x/2, position.y});
+        widget->setTransform({position.x, position.y});
 
         position.x += widgetScale.x + widgetOffset;
+
+        objects.push_back(widget);
     }
 
     void HorizontalLayout::putLayout(Layout::Ptr layout) {
@@ -39,7 +42,6 @@ namespace GraphicLib::GuiObjects {
             layout->setScale(elemScale);
         }
 
-        position.x += widgetScale.x + widgetOffset;
         scale.x += widgetScale.x;
         if (scale.y < widgetScale.y) {
             scale.y = widgetScale.y;
@@ -52,6 +54,26 @@ namespace GraphicLib::GuiObjects {
         objects.push_back(layout);
     }
 
+    void HorizontalLayout::putWidgetBox(const WidgetBox::Ptr& widgetBox) {
+        glm::vec2 widgetScale;
+        if (elemScale.x == 0.0f && elemScale.y == 0.0f) {
+            widgetScale = widgetBox->getScale();
+        } else {
+            widgetScale = elemScale;
+            widgetBox->setScale(elemScale);
+        }
+
+        position.x += widgetScale.x + widgetOffset;
+        scale.x += widgetScale.x;
+        if (scale.y < widgetScale.y) {
+            scale.y = widgetScale.y;
+        }
+
+        widgetBox->setTransform({position.x, position.y});
+
+        objects.push_back(widgetBox);
+    }
+
     void HorizontalLayout::clear() {
         position.x -= (scale.x*2 + widgetOffset * (float)objects.size());
 
@@ -61,6 +83,6 @@ namespace GraphicLib::GuiObjects {
     }
 
     glm::vec2 HorizontalLayout::getScale() {
-        return {0.0f, scale.y};
+        return {scale.x, scale.y};
     }
 }    //namespace Widgets

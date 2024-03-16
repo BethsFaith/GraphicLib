@@ -13,11 +13,12 @@ namespace GraphicLib::GuiObjects {
             auto pos = widget->getPosition();
             auto y = pos.y + yOffset * getSpeed();
 
-            if (y <= _end && y >= _start) {
-                widget->setTransform({pos.x, pos.y + yOffset * getSpeed()});
-            } else {
-                break;
-            }
+            widget->setTransform({pos.x, pos.y + yOffset * getSpeed()});
+            //            if (y <= _end && y >= _start) {
+            //                widget->setTransform({pos.x, pos.y + yOffset * getSpeed()});
+            //            } else {
+            //                break;
+            //            }
         }
     }
 

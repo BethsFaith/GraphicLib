@@ -111,9 +111,11 @@ namespace GraphicLib::GuiObjects {
     }
 
     void Button::setTransform(glm::vec2 position) {
-        _form.setTransform(position);
-
         auto scale = getScale();
+
+        position = countUniformPosition(position, scale);
+
+        _form.setTransform(position);
 
         _tracing.setTransform(position, {scale.x * 1.05f, scale.y * 1.1f});
 
@@ -169,7 +171,7 @@ namespace GraphicLib::GuiObjects {
     }
 
     glm::vec2 Button::getPosition() {
-        return _form.getPosition();
+        return countOriginalPosition(_form.getPosition(), _form.getScale());
     }
 
     glm::vec2 Button::getScale() {
