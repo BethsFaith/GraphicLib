@@ -40,6 +40,7 @@ namespace GraphicLib::GuiObjects {
 
         [[nodiscard]] const std::vector<Button::Ptr>& getElements() const;
         [[nodiscard]] const glm::vec3& getSelectedItemColor() const;
+        glm::vec2 getUniformPosition() override;
 
     private:
         glm::vec2 _position;

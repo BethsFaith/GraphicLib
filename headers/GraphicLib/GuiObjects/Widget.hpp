@@ -26,6 +26,8 @@ namespace GraphicLib::GuiObjects {
 
         virtual void setCanvas(const Objects::PickableTexture::Ptr& pickableTexture);
 
+        virtual glm::vec2 getUniformPosition() = 0;
+
         [[nodiscard]] WidgetType getType() const;
         GuiObjectType getGuiType() const override;
 

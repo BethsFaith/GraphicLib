@@ -15,12 +15,11 @@ namespace GraphicLib::GuiObjects {
         explicit VerticalLayout();
         ~VerticalLayout() = default;
 
-        void putWidget(const Widget::Ptr& widget) override;
         void clear() override;
-        void putLayout(Layout::Ptr layout) override;
 
     protected:
-        void putWidgetBox(const WidgetBox::Ptr& widgetBox) override;
+        void beforePuttingGuiObject(GuiObject::Ptr guiObject) override;
+        void beforeDeletingGuiObject(GuiObject::Ptr guiObject) override;
     };
 }
 #endif    //ROLLANDPLAY_VERTICALLAYOUT_HPP

@@ -49,12 +49,10 @@ namespace GraphicLib::GuiObjects {
         virtual void popFromBuffer();
 
         virtual void popFromBuffer(unsigned int position);
-
         void hideContent(bool needHide);
-
         void clear();
-
         void moveCarriage(int offset);
+
         void moveCarriageToScreenPosition(float xPos);
         [[nodiscard]] std::string getU8Buf() const;
         [[nodiscard]] const std::u16string& getBuf() const;
@@ -69,6 +67,8 @@ namespace GraphicLib::GuiObjects {
         void putToBuffer(const std::string& string, unsigned int position);
         void putToBuffer(const std::u16string& string, unsigned int position);
         void updateTextPosition(glm::vec2 position, glm::vec2 scale) override;
+        glm::vec2 countUniformPosition(glm::vec2 position, glm::vec2 scale) override;
+        glm::vec2 countOriginalPosition(glm::vec2 position, glm::vec2 scale) override;
 
         Graphic::Form _textField;
 

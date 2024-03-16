@@ -33,12 +33,12 @@ namespace GraphicLib::GuiObjects {
         [[nodiscard]] LayoutType getType() const;
 
         [[nodiscard]] std::vector<Widget::Ptr> getWidgets() const;
+
         [[nodiscard]] GuiObjectType getGuiType() const override;
 
     protected:
-        virtual void putLayout(Layout::Ptr layout) = 0;
-        virtual void putWidget(const Widget::Ptr& widget) = 0;
-        virtual void putWidgetBox(const WidgetBox::Ptr& widgetBox) = 0;
+        virtual void beforePuttingGuiObject(GuiObject::Ptr guiObject) = 0;
+        virtual void beforeDeletingGuiObject(GuiObject::Ptr guiObject) = 0;
 
         float widgetOffset = 0.1f;
 
@@ -47,7 +47,6 @@ namespace GraphicLib::GuiObjects {
         glm::vec2 scale{};
 
         std::vector<GuiObject::Ptr> objects;
-
     private:
         LayoutType _type;
     };

@@ -19,6 +19,7 @@ namespace GraphicLib::GuiObjects {
         void scroll(double xOffset, double yOffset) override;
 
         void setBorders(const glm::vec2& start, const glm::vec2& end) override;
+        glm::vec2 getUniformPosition() override;
 
     private:
         float _start{};

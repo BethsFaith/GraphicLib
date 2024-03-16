@@ -15,15 +15,13 @@ namespace GraphicLib::GuiObjects {
         HorizontalLayout();
         ~HorizontalLayout() = default;
 
-        void putWidget(const Widget::Ptr& widget) override;
-        void putLayout(Layout::Ptr layout) override;
-
         void clear() override;
 
         glm::vec2 getScale() override;
 
     protected:
-        void putWidgetBox(const WidgetBox::Ptr& widgetBox) override;
+        void beforePuttingGuiObject(GuiObject::Ptr guiObject) override;
+        void beforeDeletingGuiObject(GuiObject::Ptr guiObject) override;
     };
 }    //namespace Widgets
 

@@ -60,6 +60,7 @@ namespace GraphicLib::GuiObjects {
         std::u16string getTextLabelContent();
         glm::vec2 getTextLabelPosition();
         glm::vec3 getColor();
+        glm::vec2 getUniformPosition() override;
 
     protected:
         explicit Button(const Objects::Primitives::AbstractPrimitive::Ptr& graphicPrimitive, WidgetType type);

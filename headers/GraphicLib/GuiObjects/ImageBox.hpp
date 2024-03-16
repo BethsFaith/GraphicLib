@@ -42,6 +42,7 @@ namespace GraphicLib::GuiObjects {
         void setImage(const std::string& texturePath, int textureIndex);
 
         [[nodiscard]] const Objects::Textures::Texture::Ptr& getTexture() const;
+        glm::vec2 getUniformPosition() override;
 
     protected:
         glm::vec2 countUniformPosition(glm::vec2 position, glm::vec2 scale) override;

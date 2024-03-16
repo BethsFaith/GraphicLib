@@ -41,6 +41,8 @@ namespace GraphicLib::GuiObjects {
         void setText(const std::u16string& content);
         void setColor(glm::vec3 color);
 
+        glm::vec2 getUniformPosition() override;
+
     private:
         std::unique_ptr<Graphic::Form> _form;
     };
