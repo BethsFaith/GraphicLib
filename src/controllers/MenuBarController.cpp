@@ -20,8 +20,10 @@ namespace GraphicLib::Controllers {
                 auto elems = widget->getElements();
                 for (const auto& button : elems) {
                     if (button->checkSelecting((int)xPos, int(height - yPos - 1))) {
-                        if (target->widget.lock() != nullptr) {
-                            target->widget.lock()->release();
+                        if (target != nullptr) {
+                            if (target->widget.lock() != nullptr) {
+                                target->widget.lock()->release();
+                            }
                         }
                         target->widget = button;
                         target->owner = this;

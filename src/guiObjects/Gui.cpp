@@ -37,7 +37,7 @@ namespace GraphicLib::GuiObjects {
 
     void Gui::clear() {
         _widgets.clear();
-        //    _controller->clear();
+        _controller->clear();
     }
 
     const Controllers::GuiController::Ptr& Gui::getController() const {

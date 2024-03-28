@@ -25,7 +25,7 @@ namespace GraphicLib::Controllers {
 
         void processDrop(GLFWwindow* window, int count, const char** paths) override;
 
-        void clear() override {}
+        void clear() override;
 
         void addWidget(GuiObjects::Widget::Ptr widget) override;
         void removeWidget(const GuiObjects::Widget::Ptr& widget) override;

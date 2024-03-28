@@ -74,6 +74,7 @@ namespace GraphicLib::Controllers {
         if (target->owner == this && target->widget.lock() != nullptr) {
             target->widget.lock()->release();
             target->widget.lock() = nullptr;
+            target->owner = nullptr;
         }
 
         _buttons.clear();

@@ -14,13 +14,7 @@ namespace GraphicLib::GuiObjects {
     }
 
     bool ScrollBox::checkSelecting(unsigned int x, unsigned int y) {
-        //        return y >= _yMinPos && y <= _yMaxPos;
-
-        auto widgets = _layout->getWidgets();
-
-        return std::ranges::any_of(widgets, [=](const Widget::Ptr& widget){
-            return widget->checkSelecting(x, y);
-        });
+        return x >= _xMinPos && x <= _xMaxPos && y >= _yMinPos && y <= _yMaxPos;
     }
 
     void ScrollBox::draw(Shaders::ShaderProgram::Ptr colorShader,

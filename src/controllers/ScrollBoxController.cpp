@@ -42,4 +42,15 @@ namespace GraphicLib::Controllers {
     void ScrollBoxController::removeWidget(const GuiObjects::Widget::Ptr& widget) {
         _scrollBoxes.push_back(std::dynamic_pointer_cast<GuiObjects::ScrollBox>(widget));
     }
+
+    void ScrollBoxController::clear() {
+        if (target->owner == this && target->widget.lock() != nullptr) {
+            target->widget.lock()->release();
+            target->widget.lock() = nullptr;
+            target->owner = nullptr;
+        }
+
+        scrollTarget = nullptr;
+        _scrollBoxes.clear();
+    }
 }    //namespace GraphicLib::Controllers

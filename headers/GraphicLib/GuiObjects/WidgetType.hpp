@@ -15,6 +15,7 @@ namespace GraphicLib::GuiObjects {
         MENU_BAR,
         BUTTON,
         SCROLL_BOX,
+        WIDGET_BOX
     };
 }    //namespace Forms
 
